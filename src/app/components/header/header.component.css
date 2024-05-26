@@ -1,0 +1,46 @@
+.navbar{
+  background-color: #0E182B !important
+}
+
+.navbar-brand{
+  color: #FEA015;
+  left: 50px;
+
+  font-style: normal;
+  font-size: 40px;
+  line-height: 48px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.carrinho {
+  margin-right: 10px;
+  margin-left: 40px;
+}
+
+.notificacao{
+  margin-right: 10px;
+  margin-left: 40px;
+}
+
+.dropdown{
+  color: #FEA015;
+  font-size: 20px  ;
+}
+
+.navbar-toggler {
+  background-color: #FEA015;
+}
+
+.collapse{
+  justify-content: right;
+}
+
+.navbar-nav{
+  align-items: flex-end;
+}
+
+.dropdown-menu.show {
+  background: #FEA015;
+}
