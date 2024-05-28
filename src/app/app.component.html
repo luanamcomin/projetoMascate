@@ -1,12 +1,17 @@
 <body>
-  <div class="container ">
-    <img class="img" src="./assets/logo.png" alt="" width="45" height="70">
-    <h3 class="text" style="color: #FEA015;">Mascate</h3>
+  <div class="container">
+    <div class="top-row">
+      <img class="img" src="./assets/logo.png" alt="" width="45" height="70">
+      <span class="text" style="color: #FEA015;">Mascate</span>
+    </div>
+    <div class="bottom-row">
+      <span class="subtext">Sistema de gerenciamento de pedidos</span>
+    </div>
   </div>
-  <h4 class="text-2 ">Sistema de gerenciamento de pedidos</h4>
 
   <main class="form-signin w-100 m-auto">
-        <form>
+
+    <form>
       <div class="form-floating">
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
         <label for="floatingInput">Login</label>
@@ -22,10 +27,13 @@
           Remember me
         </label>
       </div>
-      <button class="btn btn-primary w-100 py-2" href="/src/app/home/home.component.html" type="submit">Entrar</button>
+      <a href="http://localhost:4200/home" type="submit" class="btn btn-primary w-100 py-2">Entrar</a>
     </form>
+    <div class="links">
+      <a href="#novo-usuario" class="link">Novo Usuário</a>
+      <a href="#suporte" class="link">Suporte</a>
+    </div>
   </main>
-
 </body>
 
-
+<router-outlet></router-outlet>
