@@ -3,3 +3,26 @@ hr{
   width:100%;
   margin-top: 80px;
 }
+
+.pre-visualizacao{
+  display: flex;
+  width: 100%;
+  gap: 15px;
+}
+
+.atalhos{
+  display: flex;
+  gap: 15px;
+}
+
+.card{
+  margin-bottom: 1rem;
+  width: 50%;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 calc(50% - 1rem);
+  }
+}
