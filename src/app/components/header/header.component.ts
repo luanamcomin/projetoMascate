@@ -1,6 +1,7 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterLink } from '@angular/router';
 import { materialize } from 'rxjs';
 
 
@@ -8,6 +9,7 @@ import { materialize } from 'rxjs';
   selector: 'app-header',
   standalone: true,
   imports: [
+    RouterLink,
     MatToolbarModule,
     NgOptimizedImage],
   templateUrl: './header.component.html',
