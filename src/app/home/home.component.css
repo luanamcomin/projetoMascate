@@ -1,3 +1,7 @@
+body{
+  margin: 15px;
+}
+
 hr{
   border-color:#aaa;
   width:100%;
@@ -13,6 +17,7 @@ hr{
 .atalhos{
   display: flex;
   gap: 15px;
+  justify-content: center;
 }
 
 .card{
