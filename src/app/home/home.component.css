@@ -8,6 +8,20 @@ hr{
   margin-top: 80px;
 }
 
+.card-img-top {
+  display: block;
+  margin: auto;
+  width: 160px;
+  height: auto;
+}
+
+.card-img-ex {
+  display: block;
+  margin: auto;
+  width: 300;
+  height: auto;
+}
+
 .pre-visualizacao{
   display: flex;
   width: 100%;
