@@ -1,6 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { OrderCatalogComponent } from './catalogo/order-catalog/order-catalog.component';
+import { OrderCatalogComponent } from './catalogo/order-catalog.component';
 import { ModuleWithProviders } from '@angular/core';
 import { LoginComponent } from './login/login.component';
 import { GestaoComponent } from './gestao/gestao.component';
