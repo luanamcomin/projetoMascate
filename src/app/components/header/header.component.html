@@ -1,5 +1,5 @@
 <!-- Navbar do Bootstrap -->
-<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #0E182B;">
+<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #0E182B;">
   <div class="container-fluid ">
     <!-- Botão com a imagem do logo -->
     <a class="navbar-brand" routerLink="/home">
@@ -31,7 +31,7 @@
         </li>
         <!-- Ícone do carrinho como botão -->
         <li class="nav-item">
-          <button class="btn btn-link p-0 carrinho" style="border: none;">
+          <button routerLink="/pedido" class="btn btn-link p-0 carrinho" style="border: none;">
             <img src="./assets/carrinho.png" width="46" height="46" alt="Carrinho" class="d-inline-block">
           </button>
         </li>

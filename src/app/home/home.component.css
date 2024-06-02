@@ -2,24 +2,20 @@ body{
   margin: 15px;
 }
 
-hr{
-  border-color:#aaa;
-  width:100%;
-  margin-top: 80px;
-}
-
 .card-img-top {
   display: block;
   margin: auto;
-  width: 160px;
+  width: 100%;
   height: auto;
+  max-width: 160px;
 }
 
 .card-img-ex {
   display: block;
   margin: auto;
-  width: 300;
+  width: 100%;
   height: auto;
+  max-width: 450px;
 }
 
 .pre-visualizacao{
