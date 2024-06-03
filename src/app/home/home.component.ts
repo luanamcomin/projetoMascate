@@ -7,6 +7,7 @@ import { GestaoComponent } from '../gestao/gestao.component';
 import { HistoricoComponent } from '../historico/historico.component';
 import { PedidoComponent } from '../pedido/pedido.component';
 import { RelatoriosComponent } from '../relatorios/relatorios.component';
+import { TabelasComponent } from '../components/tabelas/tabelas.component';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,8 @@ import { RelatoriosComponent } from '../relatorios/relatorios.component';
     GestaoComponent,
     HistoricoComponent,
     PedidoComponent,
-    RelatoriosComponent],
+    RelatoriosComponent,
+    TabelasComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
