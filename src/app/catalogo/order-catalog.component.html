@@ -1,9 +1,59 @@
 <app-header> </app-header>
 
-<hr/>
+<mat-accordion class="example-headers-align" multi>
 
- <!-- Insira o código HTML aqui-->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header class="barra-expansion">
+      <mat-panel-title class="titulo-dropdown">
+        Salgados
+      </mat-panel-title>
 
+    </mat-expansion-panel-header>
+    <div class="salgados">
+      <div mat-button (click)="openDialog()">
+        <app-product-card></app-product-card>
+      </div>
+      <div mat-button (click)="openDialog()">
+        <app-product-card></app-product-card>
+      </div>
+      <div mat-button (click)="openDialog()">
+        <app-product-card></app-product-card>
+      </div>
+      <div mat-button (click)="openDialog()">
+        <app-product-card></app-product-card>
+      </div>
+      <div mat-button (click)="openDialog()">
+        <app-product-card></app-product-card>
+      </div>
+    </div>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header class="barra-expansion">
+      <mat-panel-title class="titulo-dropdown">
+        Doces
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="doces">
+      <div mat-button (click)="openDialog()">
+        <app-product-card></app-product-card>
+      </div>
+      <div mat-button (click)="openDialog()">
+        <app-product-card></app-product-card>
+      </div>
+      <div mat-button (click)="openDialog()">
+        <app-product-card></app-product-card>
+      </div>
+      <div mat-button (click)="openDialog()">
+        <app-product-card></app-product-card>
+      </div>
+      <div mat-button (click)="openDialog()">
+        <app-product-card></app-product-card>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
 
 <app-footer></app-footer>
 <router-outlet> </router-outlet>

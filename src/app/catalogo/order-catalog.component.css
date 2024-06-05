@@ -1,0 +1,25 @@
+.salgados {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 40px 25px 40px;
+  justify-content: center;
+  gap: 15px;
+}
+
+.doces {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 40px 25px 40px;
+  justify-content: center;
+  gap: 15px;
+}
+
+.titulo-dropdown{
+  font-size: 20px;
+}
+
+mat-expansion-panel-header{
+  background-color: #dddddd;
+  margin-top: 15px;
+}
