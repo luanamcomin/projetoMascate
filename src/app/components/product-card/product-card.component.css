@@ -1,0 +1,16 @@
+.product-card {
+  max-width: 400px;
+  cursor: pointer;
+}
+
+.card-body{
+  display: block;
+  display: flex;
+}
+
+.card-img{
+  margin: auto;
+  width: 100%;
+  height: auto;
+  max-width: 160px;
+}
