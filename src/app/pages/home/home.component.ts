@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '../components/header/header.component';
-import { FooterComponent } from '../components/footer/footer.component';
 import { OrderCatalogComponent } from '../catalogo/order-catalog.component';
-import { GestaoComponent } from '../gestao/gestao.component';
 import { HistoricoComponent } from '../historico/historico.component';
 import { PedidoComponent } from '../pedido/pedido.component';
 import { RelatoriosComponent } from '../relatorios/relatorios.component';
-import { TabelasComponent } from '../components/tabelas/tabelas.component';
+import { HeaderComponent } from '../../components/header/header.component';
+import { FooterComponent } from '../../components/footer/footer.component';
+import { GestaoComponent } from '../gestao/gestao.component';
+import { TabelasComponent } from '../../components/tabelas/tabelas.component';
 
 @Component({
   selector: 'app-home',

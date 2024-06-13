@@ -7,7 +7,7 @@ body{
   margin: auto;
   width: 100%;
   height: auto;
-  max-width: 160px;
+  max-width: 100px;
 }
 
 .card-img-ex {
@@ -15,19 +15,21 @@ body{
   margin: auto;
   width: 100%;
   height: auto;
-  max-width: 450px;
+  max-width: 300px;
 }
 
 .pre-visualizacao{
   display: flex;
   width: 100%;
   gap: 15px;
+
 }
 
 .atalhos{
   display: flex;
   gap: 15px;
   justify-content: center;
+
 }
 
 .card{
@@ -36,7 +38,7 @@ body{
   text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .card {
     flex: 0 0 calc(50% - 1rem);
   }

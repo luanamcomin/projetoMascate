@@ -1,0 +1,61 @@
+<app-header> </app-header>
+
+<body>
+  <div class="pre-visualizacao">
+    <div class="card" >
+      <h4>Status do seu último pedido</h4>
+      <img src="./assets/statusExemplo.png" class="card-img-ex" alt="...">
+    </div>
+
+    <div class="card">
+      <h4>[gráfico]</h4>
+      <img src="./assets/grafico.png" class="card-img-ex" alt="...">
+    </div>
+  </div>
+
+  <div class="atalhos">
+    <a routerLink="/pedido">
+      <div class="card" style="width: 12rem;">
+      <img src="./assets/pedido.png" class="card-img-top" alt="...">
+      <h4>Pedidos</h4>
+      </div>
+    </a>
+
+    <a routerLink="/catalogo">
+      <div class="card" style="width: 12rem;">
+        <img src="./assets/produto.png" class="card-img-top" alt="...">
+        <h4>Catálogo de Produtos</h4>
+      </div>
+    </a>
+
+    <a routerLink="/gestao">
+      <div class="card" style="width: 12rem;">
+        <img src="./assets/producao1.png" class="card-img-top" alt="...">
+        <h4>Produção</h4>
+      </div>
+    </a>
+
+    <a routerLink="/historico">
+      <div class="card" style="width: 12rem;">
+        <img src="./assets/historico.png" class="card-img-top" alt="...">
+        <h4>Histórico de Pedidos</h4>
+      </div>
+    </a>
+
+    <a routerLink="/relatorios">
+      <div class="card" style="width: 12rem;">
+        <img src="./assets/relatorio.png" class="card-img-top" alt="...">
+        <h4>Relatórios</h4>
+      </div>
+    </a>
+  </div>
+  <hr>
+
+  <app-tabelas></app-tabelas>
+
+</body>
+
+
+
+<router-outlet> </router-outlet>
+<app-footer></app-footer>

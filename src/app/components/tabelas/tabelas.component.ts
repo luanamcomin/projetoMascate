@@ -19,10 +19,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {pedido: 654123, data: 20, unidade: 'Lanchonete', status: 'Cancelado'},
   {pedido: 546312, data: 21, unidade: 'Lanchonete', status: 'Finalizado'}
 ];
-
-/**
- * @title Table with filtering
- */
 @Component({
   selector: 'app-tabelas',
   styleUrl: './tabelas.component.css',
@@ -40,3 +36,32 @@ export class TabelasComponent {
   }
 }
 
+/*
+import { Component, OnInit } from '@angular/core';
+import { PedidosService } from './pedidos.service';
+
+interface Pedido {
+  numero: string;
+  hora: string;
+  tipo: string;
+  data?: Date;
+}
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent implements OnInit {
+  pedidos: Pedido[] = [];
+
+  constructor(private pedidosService: PedidosService) {}
+
+  ngOnInit(): void {
+    this.pedidosService.getPedidos().subscribe((data: Pedido[]) => {
+      this.pedidos = data;
+    });
+  }
+}
+
+ */

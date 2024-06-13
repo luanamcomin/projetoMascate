@@ -28,3 +28,31 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
 </table>
+
+<!--
+<table>
+  <thead>
+    <tr>
+      <th>Número do Pedido</th>
+      <th>Hora</th>
+      <th>Tipo</th>
+      <th>Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pedido of pedidos">
+      <td>{{ pedido.numero }}</td>
+      <td>{{ pedido.hora }}</td>
+      <td>{{ pedido.tipo }}</td>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Escolha uma data</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="pedido.data">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </td>
+    </tr>
+  </tbody>
+</table>
+ -->
