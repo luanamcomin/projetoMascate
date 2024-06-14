@@ -1,55 +1,53 @@
 <app-header> </app-header>
 
 <mat-accordion class="example-headers-align" multi>
-
   <mat-expansion-panel>
     <mat-expansion-panel-header class="barra-expansion">
-      <mat-panel-title class="titulo-dropdown">
-        Salgados
-      </mat-panel-title>
-
+      <mat-panel-title class="titulo-dropdown"> Salgados </mat-panel-title>
     </mat-expansion-panel-header>
     <div class="salgados">
-      <div mat-button (click)="openDialog()">
-        <app-product-card></app-product-card>
-      </div>
-      <div mat-button (click)="openDialog()">
-        <app-product-card></app-product-card>
-      </div>
-      <div mat-button (click)="openDialog()">
-        <app-product-card></app-product-card>
-      </div>
-      <div mat-button (click)="openDialog()">
-        <app-product-card></app-product-card>
-      </div>
-      <div mat-button (click)="openDialog()">
-        <app-product-card></app-product-card>
+      <div
+        *ngFor="let item of productList"
+        mat-button
+        (click)="openDialog(item)"
+      >
+        <div *ngIf="item.tipo === 'salgado'">
+          <app-product-card [product]="item"></app-product-card>
+        </div>
       </div>
     </div>
   </mat-expansion-panel>
 
   <mat-expansion-panel>
     <mat-expansion-panel-header class="barra-expansion">
-      <mat-panel-title class="titulo-dropdown">
-        Doces
-      </mat-panel-title>
+      <mat-panel-title class="titulo-dropdown"> Doces </mat-panel-title>
     </mat-expansion-panel-header>
 
     <div class="doces">
-      <div mat-button (click)="openDialog()">
-        <app-product-card></app-product-card>
+      <div
+        *ngFor="let item of productList"
+        mat-button
+        (click)="openDialog(item)"
+      >
+        <div *ngIf="item.tipo === 'doce'">
+          <app-product-card [product]="item"></app-product-card>
+        </div>
       </div>
-      <div mat-button (click)="openDialog()">
-        <app-product-card></app-product-card>
-      </div>
-      <div mat-button (click)="openDialog()">
-        <app-product-card></app-product-card>
-      </div>
-      <div mat-button (click)="openDialog()">
-        <app-product-card></app-product-card>
-      </div>
-      <div mat-button (click)="openDialog()">
-        <app-product-card></app-product-card>
+    </div>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header class="barra-expansion">
+      <mat-panel-title class="titulo-dropdown"> Carrinho </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="doces">
+      <div
+        *ngFor="let item of pedidoService.getCart();"
+        mat-button
+        (click)="openDialog(item)"
+      >
+          <app-product-card [product]="item"></app-product-card>
       </div>
     </div>
   </mat-expansion-panel>

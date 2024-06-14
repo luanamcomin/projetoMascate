@@ -1,23 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-interface Pedido {
-  numero: string;
-  hora: string;
-  tipo: string;
-  data?: Date;
-}
+import { Pedidos } from '../../models/pedidos';
+import { Produtos } from '../../models/produtos';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PedidoServiceService {
-  private apiUrl = 'http://localhost:3000/api/pedidos'; // URL da API
+export class PedidoService {
+  cart: Array<Produtos> = [];
 
-  constructor(private http: HttpClient) { }
+  constructor() {}
 
-  getPedidos(): Observable<Pedido[]> {
-    return this.http.get<Pedido[]>(this.apiUrl);
+  getCart() {
+    return this.cart;
+  }
+
+  setCart(item: Produtos) {
+    this.cart.push(item);
   }
 }

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { Produtos } from '../../models/produtos';
 
 @Component({
   selector: 'app-product-card',
@@ -13,7 +14,9 @@ import {MatCardModule} from '@angular/material/card';
   styleUrl: './product-card.component.css'
 })
 export class ProductCardComponent {
+  @Input() product!: Produtos;
   longText = `Descrição do produto`;
+
+  constructor() {}
 }
 
-//foreach de lista de produtos / modal

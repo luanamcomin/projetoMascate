@@ -13,8 +13,10 @@ import {
   MatDialogContent,
   MatDialogTitle,
 } from '@angular/material/dialog';
-
-
+import { ProdutoService } from '../../services/produto/produto.service';
+import { Produtos } from '../../models/produtos';
+import { CommonModule } from '@angular/common';
+import { PedidoService } from '../../services/pedido/pedido-service.service';
 
 @Component({
   selector: 'app-order-catalog',
@@ -27,17 +29,29 @@ import {
     ProductCardComponent,
     MatExpansionModule,
     MatButtonModule,
-    MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose, MatButtonModule
+    MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose, MatButtonModule,
+    CommonModule
   ],
   templateUrl: './order-catalog.component.html',
   styleUrl: './order-catalog.component.css'
 })
 
 export class OrderCatalogComponent {
-  constructor(public dialog: MatDialog) {}
+  productList: Array<Produtos> = [];
+  cartList: Array<Produtos> = [];
 
-  openDialog() {
-    this.dialog.open(ModalProdutoComponent);
+
+  constructor(public dialog: MatDialog, public productService: ProdutoService, public pedidoService: PedidoService) {
+    this.loadProducts();
+  }
+
+  loadProducts() {
+    this.productList = this.productService.getProducts();
+    console.log(this.productList);
+  }
+
+  openDialog(item: Produtos) {
+    this.dialog.open(ModalProdutoComponent, {data: {item: item}});
   }
 }
 

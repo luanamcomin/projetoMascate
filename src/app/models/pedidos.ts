@@ -3,7 +3,7 @@ export interface Pedidos {
   idFuncionario: number,
   idUnidade: number;
   observacao: string;
-  dataHoraSolicitada: Date;
+  data?: Date;
   status: string;
   idProduto: number;
 }

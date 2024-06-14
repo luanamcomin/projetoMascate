@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import {
+  MAT_DIALOG_DATA,
   MatDialog,
   MatDialogActions,
   MatDialogClose,
@@ -7,6 +8,9 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
+import { Produtos } from '../../models/produtos';
+import { ProdutoService } from '../../services/produto/produto.service';
+import { PedidoService} from '../../services/pedido/pedido-service.service';
 
 @Component({
   selector: 'app-modal-produto',
@@ -21,4 +25,14 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './modal-produto.component.css'
 })
 export class ModalProdutoComponent {
+
+  produto!: Produtos;
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data: {item: Produtos}, public pedidoService: PedidoService) {
+    this.produto = this.data.item;
+  }
+
+  addToCart() {
+    this.pedidoService.setCart(this.produto);
+  }
 }
