@@ -1,0 +1,19 @@
+.produto-modal{
+  background-color: #0E182B;
+  display: flex;
+}
+
+.produto-imagem{
+  height: 200px;
+  background-color: #eaeaea;
+  display: flex;
+  width: 300px;
+  border-radius: 5px;
+  padding: 50px;
+  margin: 20px;
+}
+
+.imagem-padrao {
+  height: fit-content;
+}
+

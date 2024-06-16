@@ -1,6 +1,19 @@
-<h2 mat-dialog-title>[Nome do produto]</h2>
-<img src="..." href="">
-<mat-dialog-content>This dialog showcases the title, close, content and actions elements.</mat-dialog-content>
-<mat-dialog-actions>
-  <button (click)="addToCart()" mat-button mat-dialog-close>Adicionar produto</button>
-</mat-dialog-actions>
+<div class="produto-modal">
+  <div class="produto-imagem">
+    <img src="{{ produto.urlImagem }}" href="" class="imagem-padrao" />
+  </div>
+
+  <div class="produto-info">
+    <h2 mat-dialog-title style="color: #FEA015;">{{ produto.nome }} style:</h2>
+    <mat-dialog-content style="color: #eaeaea; font-size: small;">{{ produto.descricao }}</mat-dialog-content>
+  </div>
+
+    <button
+      (click)="addToCart()"
+      mat-button
+      mat-dialog-close
+      class="button-modal"
+      style="color: #FEA015;">
+      Adicionar produto
+    </button>
+</div>
