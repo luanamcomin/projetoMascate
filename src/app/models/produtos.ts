@@ -4,4 +4,6 @@ export interface Produtos {
   tipo: string;
   descricao: string;
   urlImagem: string;
+  sabor: string;
+  quantidade?: number;
 }
