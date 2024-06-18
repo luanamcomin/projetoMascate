@@ -1,0 +1,16 @@
+.shopping-cart {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  font-size: 18px;
+  text-align: center;
+}
