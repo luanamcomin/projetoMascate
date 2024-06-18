@@ -9,7 +9,7 @@ import {
 } from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import { Produtos } from '../../models/produtos';
-import { PedidoService} from '../../services/pedido/pedido-service.service';
+import { PedidoService} from '../../services/pedido/pedido.service';
 
 @Component({
   selector: 'app-modal-produto',

@@ -1,8 +1,23 @@
 <app-header> </app-header>
 
-<hr/>
+<h1>Pedido:</h1>
 
- <!-- Insira o código HTML aqui-->
+
+<div
+  *ngFor="let item of pedidoService.getCart()"
+  mat-button
+  (click)="openDialog(item)"
+>
+  <h2>{{ item.nome }}</h2>
+  <p>{{ item.descricao }}</p>
+  <img [src]="item.urlImagem" alt="{{ item.nome }}" />
+  <button (click)="removeFromCart(item)">Remover do carrinho</button>
+  <div>
+    <button (click)="decreaseQuantity(item)">-</button>
+    <span>{{ item.quantidade || 0 }}</span>
+    <button (click)="increaseQuantity(item)">+</button>
+  </div>
+</div>
 
 <app-footer></app-footer>
 <router-outlet> </router-outlet>

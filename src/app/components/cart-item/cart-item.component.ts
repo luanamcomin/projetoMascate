@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatDialog } from '@angular/material/dialog';
 import { ProdutoService } from '../../services/produto/produto.service';
-import { PedidoService } from '../../services/pedido/pedido-service.service';
+import { PedidoService } from '../../services/pedido/pedido.service';
 
 @Component({
   selector: 'app-cart-item',

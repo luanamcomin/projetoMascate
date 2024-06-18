@@ -4,8 +4,8 @@ import { ModalProdutoComponent } from '../../components/modal-produto/modal-prod
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatButtonModule} from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
 import {
   MatDialog,
   MatDialogActions,
@@ -16,7 +16,7 @@ import {
 import { ProdutoService } from '../../services/produto/produto.service';
 import { Produtos } from '../../models/produtos';
 import { CommonModule } from '@angular/common';
-import { PedidoService } from '../../services/pedido/pedido-service.service';
+import { PedidoService } from '../../services/pedido/pedido.service';
 
 @Component({
   selector: 'app-order-catalog',
@@ -29,19 +29,25 @@ import { PedidoService } from '../../services/pedido/pedido-service.service';
     ProductCardComponent,
     MatExpansionModule,
     MatButtonModule,
-    MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose, MatButtonModule,
-    CommonModule
+    MatDialogTitle,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogClose,
+    MatButtonModule,
+    CommonModule,
   ],
   templateUrl: './order-catalog.component.html',
-  styleUrl: './order-catalog.component.css'
+  styleUrl: './order-catalog.component.css',
 })
-
 export class OrderCatalogComponent {
   productList: Array<Produtos> = [];
   cartList: Array<Produtos> = [];
 
-
-  constructor(public dialog: MatDialog, public productService: ProdutoService, public pedidoService: PedidoService) {
+  constructor(
+    public dialog: MatDialog,
+    public productService: ProdutoService,
+    public pedidoService: PedidoService
+  ) {
     this.loadProducts();
   }
 
@@ -51,7 +57,6 @@ export class OrderCatalogComponent {
   }
 
   openDialog(item: Produtos) {
-    this.dialog.open(ModalProdutoComponent, {data: {item: item}});
+    this.dialog.open(ModalProdutoComponent, { data: { item: item } });
   }
 }
-
