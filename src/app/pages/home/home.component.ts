@@ -8,6 +8,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { GestaoComponent } from '../gestao/gestao.component';
 import { TabelasComponent } from '../../components/tabelas/tabelas.component';
+import { MatCardActions } from '@angular/material/card';
 
 @Component({
   selector: 'app-home',
@@ -20,9 +21,9 @@ import { TabelasComponent } from '../../components/tabelas/tabelas.component';
     OrderCatalogComponent,
     GestaoComponent,
     HistoricoComponent,
-    PedidoComponent,
     RelatoriosComponent,
-    TabelasComponent],
+    TabelasComponent,
+    MatCardActions],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
