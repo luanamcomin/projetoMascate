@@ -1,16 +1,39 @@
 .product-card {
   max-width: 400px;
   cursor: pointer;
-}
-
-.card-body{
-  display: block;
+  width: 450px;
+  height: 210px;
+  background: rgba(14, 24, 43, 0.64);
+  border-radius: 10px;
   display: flex;
 }
 
-.card-img{
+.nome-produto {
+  color: aliceblue;
+}
+
+.card-body {
+  display: block;
+  display: flex;
+  width: 300px;
+  color: aliceblue;
+}
+
+.card-img {
+  width: 200px;
+  height: 140px;
+  background: #f4f4f4;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+img {
   margin: auto;
-  width: 100%;
+  width: 150px;
   height: auto;
   max-width: 160px;
+}
+
+.product-content{
+  display: flex;
 }

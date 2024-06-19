@@ -2,60 +2,57 @@
 
 <body>
   <div class="pre-visualizacao">
-    <div class="card" >
+    <div class="card">
       <h4>Status do seu último pedido</h4>
-      <img src="./assets/statusExemplo.png" class="card-img-ex" alt="...">
+      <img src="./assets/statusExemplo.png" class="card-img-ex" alt="..." />
     </div>
 
     <div class="card">
       <h4>[gráfico]</h4>
-      <img src="./assets/grafico.png" class="card-img-ex" alt="...">
+      <img src="./assets/grafico.png" class="card-img-ex" alt="..." />
     </div>
   </div>
 
   <div class="atalhos">
-    <a routerLink="/pedido">
-      <div class="card" style="width: 12rem;">
-      <img src="./assets/pedido.png" class="card-img-top" alt="...">
-      <h4>Pedidos</h4>
-      </div>
-    </a>
+    <div class="card-atalho" style="width: 12rem">
+      <a routerLink="/pedido">
+        <img src="./assets/pedido.png" class="card-img-top" alt="..." />
+        <h4>Pedidos</h4>
+      </a>
+    </div>
 
-    <a routerLink="/catalogo">
-      <div class="card" style="width: 12rem;">
-        <img src="./assets/produto.png" class="card-img-top" alt="...">
+    <div class="card-atalho" style="width: 12rem">
+      <a routerLink="/catalogo">
+        <img src="./assets/produto.png" class="card-img-top" alt="..." />
         <h4>Catálogo de Produtos</h4>
-      </div>
-    </a>
+      </a>
+    </div>
 
-    <a routerLink="/gestao">
-      <div class="card" style="width: 12rem;">
-        <img src="./assets/producao1.png" class="card-img-top" alt="...">
+    <div class="card-atalho" style="width: 12rem">
+      <a routerLink="/gestao">
+        <img src="./assets/producao1.png" class="card-img-top" alt="..." />
         <h4>Produção</h4>
-      </div>
-    </a>
+      </a>
+    </div>
 
-    <a routerLink="/historico">
-      <div class="card" style="width: 12rem;">
-        <img src="./assets/historico.png" class="card-img-top" alt="...">
+    <div class="card-atalho" style="width: 12rem">
+      <a routerLink="/historico">
+        <img src="./assets/historico.png" class="card-img-top" alt="..." />
         <h4>Histórico de Pedidos</h4>
-      </div>
-    </a>
+      </a>
+    </div>
 
-    <a routerLink="/relatorios">
-      <div class="card" style="width: 12rem;">
-        <img src="./assets/relatorio.png" class="card-img-top" alt="...">
+    <div class="card-atalho" style="width: 12rem">
+      <a routerLink="/relatorios">
+        <img src="./assets/relatorio.png" class="card-img-top" alt="..." />
         <h4>Relatórios</h4>
-      </div>
-    </a>
+      </a>
+    </div>
   </div>
-  <hr>
+  <hr />
 
   <app-tabelas></app-tabelas>
-
 </body>
-
-
 
 <router-outlet> </router-outlet>
 <app-footer></app-footer>

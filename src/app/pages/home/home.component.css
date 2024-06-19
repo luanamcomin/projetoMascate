@@ -1,6 +1,31 @@
-body{
+body {
   margin: 15px;
   background-color: rgba(14, 24, 43, 0);
+}
+
+.card-img-ex {
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  max-width: 350px;
+}
+
+.pre-visualizacao {
+  display: flex;
+  width: 100%;
+  gap: 15px;
+}
+
+.card {
+  margin-bottom: 1rem;
+  width: 50%;
+  text-align: center;
+  padding: 20px;
+  color: #ddd;
+  border: 1px solid #fea015;
+  border-radius: 5px;
+  background-color: transparent;
 }
 
 .card-img-top {
@@ -11,32 +36,32 @@ body{
   max-width: 100px;
 }
 
-.card-img-ex {
-  display: block;
-  margin: auto;
-  width: 100%;
-  height: auto;
-  max-width: 300px;
-}
-
-.pre-visualizacao{
-  display: flex;
-  width: 100%;
-  gap: 15px;
-
-}
-
-.atalhos{
+.atalhos {
   display: flex;
   gap: 15px;
   justify-content: center;
-
 }
 
-.card{
-  margin-bottom: 1rem;
-  width: 50%;
+.card-atalho {
+  justify-content: center;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #0e182b;
+  border-radius: 5px;
+  background-color: #fea015;
+  color: #0e182b;
+  transition: transform 0.3s;
+  height: 200px;
+  left: 588px;
+}
+.card-atalho a{
+  color: #0e182b;
+  align-items: center;
   text-align: center;
+}
+
+.card-atalho:hover {
+  transform: scale(1.05);
 }
 
 @media (max-width: 500px) {

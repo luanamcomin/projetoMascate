@@ -3,6 +3,9 @@
   padding: 0px 40px 25px 40px;
   justify-content: center;
   gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 1 1 calc(33.333% - 20px);
 }
 
 .titulo-produtos{
@@ -14,5 +17,4 @@
 
 .countainer{
   margin: 20px;
-
 }
