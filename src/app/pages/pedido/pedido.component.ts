@@ -12,6 +12,13 @@ import { PedidoService } from '../../services/pedido/pedido.service';
 import { ModalProdutoComponent } from '../../components/modal-produto/modal-produto.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { ProdutoService } from '../../services/produto/produto.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-pedido',
@@ -25,18 +32,42 @@ import { ProductCardComponent } from '../../components/product-card/product-card
     MatListModule,
     CartItemComponent,
     CommonModule,
-    ProductCardComponent
+    ProductCardComponent,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   templateUrl: './pedido.component.html',
   styleUrl: './pedido.component.css',
 })
 export class PedidoComponent {
+  searchItem: string = '';
+  allProducts: Array<Produtos> = [];
   cartList: Array<Produtos> = [];
 
   constructor(
     public dialog: MatDialog,
-    public pedidoService: PedidoService
+    public pedidoService: PedidoService,
+    private produtoService: ProdutoService
   ) {}
+
+  ngOnInit() {
+    this.allProducts = this.produtoService.getProducts();
+  }
+
+  search() {
+    if (this.searchItem) {
+      this.cartList = this.allProducts.filter((product) =>
+        product.nome.toLowerCase().includes(this.searchItem.toLowerCase())
+      );
+    } else {
+      this.cartList = [];
+    }
+  }
 
   removeFromCart(item: Produtos) {
     const index = this.cartList.indexOf(item);
