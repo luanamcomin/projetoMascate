@@ -1,8 +1,55 @@
 <app-header> </app-header>
 
-<hr/>
+<h3>Histórico de Pedidos</h3>
+<div class="container-hist">
+  <div class="row mb-3">
+  <div class="col-md-9">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Pesquisar..." (input)="filtrar($event)">
+      <button class="btn btn-outline-secondary" type="button" (click)="filtrar($event)">Pesquisar</button>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="filtro-container">
+      <mat-form-field>
+        <mat-label>Insira um intervalo de datas</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate placeholder="Start date">
+          <input matEndDate placeholder="End date">
+        </mat-date-range-input>
+        <mat-hint></mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
 
- <!-- Insira o código HTML aqui-->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Pedido</th>
+      <th scope="col">
+        Data e Hora
+        <div class="seta-container" [ngClass]="{'ordenacao-descendente': !ordenacaoAscendente, 'ordenacao-ascendente': ordenacaoAscendente}">
+          <div class="seta-ordenacao" (click)="alternarOrdenacao()"></div>
+        </div>
+      </th>
+      <th scope="col">Unidade</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pedido of filteredPedidos">
+      <td scope="row">{{ pedido.id }}</td>
+      <td>{{ pedido.data | date: 'dd/MM/yyyy' }} {{ pedido.hora }}</td>
+      <td>{{ pedido.unidade }}</td>
+      <td>{{ pedido.status }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 <app-footer></app-footer>
-<router-outlet> </router-outlet>
+<router-outlet></router-outlet>
+

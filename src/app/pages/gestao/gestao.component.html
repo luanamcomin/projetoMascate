@@ -1,8 +1,760 @@
-<app-header> </app-header>
+<app-header></app-header>
 
-<hr/>
+<h3>Produção</h3>
 
- <!-- Insira o código HTML aqui-->
+<div class="container-gestao">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Número do Pedido</th>
+      <th scope="col">Unidades</th>
+      <th scope="col">Status</th>
+      <th scope="col">Hora da Solicitação</th>
+      <th scope="col">Quantidade Solicitada</th>
+    </tr>
+  </thead>
+</table>
+
+<mat-accordion>
+  <!-- Primeiro Painel -->
+  <mat-expansion-panel
+    (opened)="panelOpenState.set(true)"
+    (closed)="panelOpenState.set(false)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> 095632 </mat-panel-title>
+      <mat-panel-title> Lanchonete </mat-panel-title>
+      <mat-panel-title> Em produção </mat-panel-title>
+      <mat-panel-title> 15 :00</mat-panel-title>
+      <mat-panel-title> 200 unidades </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <!-- Primeira Tabela -->
+    <table class="table">
+      <thead>
+        <tr>
+          <td scope="col"><strong>Itens</strong></td>
+          <td scope="col"><strong>Quantidade Solicitada</strong></td>
+          <td scope="col"><strong>Quantidade Entregue</strong></td>
+          <td scope="col"><strong>Obs</strong></td>
+          <td scope="col"><strong>Status</strong></td>
+          <td scope="col"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row">Coxinha de Carne de Sol</td>
+          <td>06</td>
+          <td>06</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <!-- <td rowspan="5"><button mat-button color="primary" (click)="finalizarPedido(95632)">Finalizar</button></td> -->
+        </tr>
+        <tr>
+          <td scope="row">Coxinha de Frango</td>
+          <td>15</td>
+          <td>15</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">Crossant de Frango</td>
+          <td>06</td>
+          <td>04</td>
+          <td>Faltou insumos</td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+
+          <td></td>
+        </tr>
+        <tr>
+          <td scope="row">Pão Delícia</td>
+          <td>06</td>
+          <td>06</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">Esfiha de Carne</td>
+          <td>04</td>
+          <td>04</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <td scope="row">Pão Pizza</td>
+        <td>08</td>
+        <td>08</td>
+        <td></td>
+        <td>
+          <mat-form-field>
+            <mat-label>Selecione uma opção</mat-label>
+            <mat-select disableRipple>
+              <mat-option value="1">Confirmado</mat-option>
+              <mat-option value="2">Em preparação</mat-option>
+              <mat-option value="3">Finalizado</mat-option>
+              <mat-option value="4">Cancelado</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <tr>
+          <td scope="row">Enrolado de Salsicha Frito</td>
+          <td>06</td>
+          <td>05</td>
+          <td>Faltou salsicha</td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr></tr>
+        <tr>
+          <td scope="row">Calzone de Queijo</td>
+          <td>04</td>
+          <td>02</td>
+          <td>Faltou queijo</td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Empada de Frango</td>
+          <td>04</td>
+          <td>04</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Bolo de Pote</td>
+          <td>08</td>
+          <td>08</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Brigadeiro</td>
+          <td>30</td>
+          <td>30</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Mousse</td>
+          <td>10</td>
+          <td>10</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Pudim de Leite</td>
+          <td>12</td>
+          <td>12</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Tartalete de Frutas</td>
+          <td>10</td>
+          <td>06</td>
+          <td>Faltou insumos</td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Torta Banana</td>
+          <td>16</td>
+          <td>16</td>
+          <td>16 fatias</td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Torta de Chocolate</td>
+          <td>16</td>
+          <td>16</td>
+          <td>16 fatias</td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Torta de Limão</td>
+          <td>16</td>
+          <td>16</td>
+          <td>16 fatias</td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Torta de Morango</td>
+          <td>16</td>
+          <td>16</td>
+          <td>16 fatias</td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Torta de Ricota com Goiabada</td>
+          <td>16</td>
+          <td>16</td>
+          <td>16 fatias</td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-expansion-panel>
+
+  <!-- Segundo Painel -->
+  <mat-expansion-panel
+    (opened)="panelOpenState.set(true)"
+    (closed)="panelOpenState.set(false)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> 095633 </mat-panel-title>
+      <mat-panel-title> Cafeteria </mat-panel-title>
+      <mat-panel-title> Em produção </mat-panel-title>
+      <mat-panel-title> 11:00</mat-panel-title>
+      <mat-panel-title> 204 unidades </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <!-- Segunda Tabela -->
+    <table class="table">
+      <thead>
+        <tr>
+          <td scope="col"><strong>Itens</strong></td>
+          <td scope="col"><strong>Quantidade Solicitada</strong></td>
+          <td scope="col"><strong>Quantidade Entregue</strong></td>
+          <td scope="col"><strong>Obs</strong></td>
+          <td scope="col"><strong>Status</strong></td>
+          <td scope="col"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row">Coxinha de Carne de Sol</td>
+          <td>05</td>
+          <td>05</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td rowspan="5">
+            <button mat-button color="primary" (click)="finalizarPedido(95632)">
+              Finalizar
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">Coxinha de Frango</td>
+          <td>20</td>
+          <td>20</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">Crossant de Queijo</td>
+          <td>06</td>
+          <td>06</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+
+          <td></td>
+        </tr>
+        <tr>
+          <td scope="row">Pão Delícia</td>
+          <td>08</td>
+          <td>08</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row">Esfiha de Carne</td>
+          <td>06</td>
+          <td>06</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <td scope="row">Pão Pizza</td>
+        <td>10</td>
+        <td>10</td>
+        <td></td>
+        <td>
+          <mat-form-field>
+            <mat-label>Selecione uma opção</mat-label>
+            <mat-select disableRipple>
+              <mat-option value="1">Confirmado</mat-option>
+              <mat-option value="2">Em preparação</mat-option>
+              <mat-option value="3">Finalizado</mat-option>
+              <mat-option value="4">Cancelado</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <tr>
+          <td scope="row">Enrolado de Salsicha Frito</td>
+          <td>04</td>
+          <td>04</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr></tr>
+        <tr>
+          <td scope="row">Calzone de Queijo</td>
+          <td>04</td>
+          <td>04</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Empada de Camarão</td>
+          <td>05</td>
+          <td>05</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Bolo de Pote</td>
+          <td>09</td>
+          <td>09</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Brigadeiro</td>
+          <td>25</td>
+          <td>25</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Mousse</td>
+          <td>08</td>
+          <td>08</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Pudim de Leite</td>
+          <td>10</td>
+          <td>10</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Tartalete de Frutas</td>
+          <td>04</td>
+          <td>04</td>
+          <td></td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Torta Alemã</td>
+          <td>16</td>
+          <td>16</td>
+          <td>16 fatias</td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Torta de Bem Casado</td>
+          <td>16</td>
+          <td>16</td>
+          <td>16 fatias</td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Torta de Limão</td>
+          <td>16</td>
+          <td>16</td>
+          <td>16 fatias</td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Torta de Crocante com Chocolate</td>
+          <td>16</td>
+          <td>16</td>
+          <td>16 fatias</td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td scope="row">Torta de Prestígio</td>
+          <td>16</td>
+          <td>16</td>
+          <td>16 fatias</td>
+          <td>
+            <mat-form-field>
+              <mat-label>Selecione uma opção</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Confirmado</mat-option>
+                <mat-option value="2">Em preparação</mat-option>
+                <mat-option value="3">Finalizado</mat-option>
+                <mat-option value="4">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-expansion-panel>
+</mat-accordion>
+</div>
 
 <app-footer></app-footer>
-<router-outlet> </router-outlet>
+<router-outlet></router-outlet>
