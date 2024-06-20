@@ -6,6 +6,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
 import {
   MatDialog,
   MatDialogActions,
@@ -35,6 +36,7 @@ import { PedidoService } from '../../services/pedido/pedido.service';
     MatDialogClose,
     MatButtonModule,
     CommonModule,
+    MatGridListModule
   ],
   templateUrl: './order-catalog.component.html',
   styleUrl: './order-catalog.component.css',

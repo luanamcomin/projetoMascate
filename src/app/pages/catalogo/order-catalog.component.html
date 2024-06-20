@@ -1,7 +1,7 @@
 <app-header> </app-header>
 
-<div>
-  <div class="countainer">
+<div class="background" >
+  <div class="container-products">
     <h3 class="titulo-produtos">Salgados</h3>
   </div>
   <div class="produtos">
@@ -13,33 +13,40 @@
   </div>
 
   <div>
-    <div class="countainer">
+    <div class="container-products">
       <h3 class="titulo-produtos">Doces</h3>
     </div>
     <div class="produtos">
-      <div *ngFor="let item of productList" mat-button (click)="openDialog(item)">
+      <div
+        *ngFor="let item of productList"
+        mat-button
+        (click)="openDialog(item)"
+      >
         <div *ngIf="item.tipo === 'doce'">
           <app-product-card [product]="item"></app-product-card>
         </div>
       </div>
     </div>
 
-  <mat-expansion-panel>
-    <mat-expansion-panel-header class="barra-expansion">
-      <mat-panel-title class="titulo-dropdown"> Carrinho TESTE </mat-panel-title>
-    </mat-expansion-panel-header>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="barra-expansion">
+        <mat-panel-title class="titulo-dropdown">
+          Carrinho TESTE
+        </mat-panel-title>
+      </mat-expansion-panel-header>
 
-    <div class="doces">
-      <div
-        *ngFor="let item of pedidoService.getCart()"
-        mat-button
-        (click)="openDialog(item)"
-      >
-        <app-product-card [product]="item"></app-product-card>
+      <div class="doces">
+        <div
+          *ngFor="let item of pedidoService.getCart()"
+          mat-button
+          (click)="openDialog(item)"
+        >
+          <app-product-card [product]="item"></app-product-card>
+        </div>
       </div>
-    </div>
-  </mat-expansion-panel>
-</div>
+    </mat-expansion-panel>
+  </div>
 
-<app-footer></app-footer>
-<router-outlet> </router-outlet>
+  <app-footer></app-footer>
+  <router-outlet> </router-outlet>
+</div>

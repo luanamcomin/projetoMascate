@@ -48,6 +48,7 @@ export class PedidoComponent {
   searchItem: string = '';
   allProducts: Array<Produtos> = [];
   cartList: Array<Produtos> = [];
+  addedItems: Array<Produtos> = [];
 
   constructor(
     public dialog: MatDialog,
@@ -57,6 +58,7 @@ export class PedidoComponent {
 
   ngOnInit() {
     this.allProducts = this.produtoService.getProducts();
+    this.addedItems = this.pedidoService.getCart();
   }
 
   search() {
@@ -69,15 +71,25 @@ export class PedidoComponent {
     }
   }
 
+  addToCart() {
+    if(this.searchItem) {
+      let item: Produtos = this.allProducts.filter((product) =>
+        product.nome.toLowerCase().includes(this.searchItem.toLowerCase())
+      )[0];
+      this.addedItems.push(item);
+    }
+  }
+
   removeFromCart(item: Produtos) {
-    const index = this.cartList.indexOf(item);
+    const index = this.addedItems.indexOf(item);
     if (index > -1) {
-      this.cartList.splice(index, 1);
+      this.addedItems.splice(index, 1);
     }
   }
 
   increaseQuantity(item: Produtos) {
     item.quantidade = (item.quantidade || 0) + 1;
+    console.log(this.addedItems);
   }
 
   decreaseQuantity(item: Produtos) {

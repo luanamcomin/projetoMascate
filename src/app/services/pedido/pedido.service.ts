@@ -16,4 +16,6 @@ export class PedidoService {
   setCart(item: Produtos) {
     this.cart.push(item);
   }
+
+  
 }

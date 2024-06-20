@@ -1,6 +1,6 @@
-body {
-  margin: 15px;
-  background-color: rgba(14, 24, 43, 0);
+.background{
+  padding: 15px;
+  background-color: rgba(14, 24, 43, 0.85);
 }
 
 .card-img-ex {

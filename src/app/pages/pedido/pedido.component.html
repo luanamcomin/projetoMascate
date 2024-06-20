@@ -14,17 +14,19 @@
             placeholder="Produto"
             aria-label="Number"
             matInput
+            [ngModelOptions]="{standalone: true}"
             [(ngModel)]="searchItem"
             [matAutocomplete]="auto"
             (keyup)="search()"
           />
           <mat-autocomplete #auto="matAutocomplete">
             @for (option of allProducts; track option.idProduto) {
-            <mat-option [value]="option">{{ option.nome }}</mat-option>
+            <mat-option [value]="option.nome">{{ option.nome }}</mat-option>
             }
           </mat-autocomplete>
         </mat-form-field>
       </form>
+      <button (click)="addToCart()">Adicionar</button>
     </div>
 
     <div class="obs-pedido">
@@ -38,17 +40,15 @@
 <!-- Lista de itens adicionados no carrinho -->
  <hr>
   <div
-    *ngFor="let item of pedidoService.getCart()"
-    mat-button
-    (click)="openDialog(item)"
-  >
+    *ngFor="let item of addedItems"
+    mat-button>
     <h2>{{ item.nome }}</h2>
     <p>{{ item.descricao }}</p>
     <img [src]="item.urlImagem" alt="{{ item.nome }}" />
     <button (click)="removeFromCart(item)">Remover do carrinho</button>
     <div>
       <button (click)="decreaseQuantity(item)">-</button>
-      <span>{{ item.quantidade || 0 }}</span>
+      <span>{{ item.quantidade || 1 }}</span>
       <button (click)="increaseQuantity(item)">+</button>
     </div>
   </div>
