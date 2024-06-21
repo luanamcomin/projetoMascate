@@ -1,19 +1,59 @@
-.produto-modal{
-  background-color: #0E182B;
-  display: flex;
+h2{
+  color: #fea015 !important;
 }
 
-.produto-imagem{
-  height: 200px;
+.produto-modal {
+  background-color: #0e182b;
+  display: flow;
+  position: relative;
+  height: 260px;
+  width: 600px;
+}
+
+.produto-imagem {
+  height: 160px;
   background-color: #eaeaea;
   display: flex;
-  width: 300px;
+  width: 220px;
   border-radius: 5px;
-  padding: 50px;
   margin: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.produto-imagem img {
+  max-width: 200px;
+  max-height: 200px;
 }
 
 .imagem-padrao {
   height: fit-content;
 }
 
+.produto-info {
+  display: flex;
+}
+
+.descricao {
+  align-items: center ;
+}
+
+.dropdown p{
+  color: #fea015;
+}
+
+.select-sabor{
+  width: 320px;
+  height: 75px;
+  margin-top: 20px;
+}
+
+.button-modal{
+  background-color: #fea015;
+  color: #eaeaea;
+  font-size: large;
+}
+
+.added-items{
+  background-color: aquamarine;
+}

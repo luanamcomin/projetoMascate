@@ -1,19 +1,37 @@
 <div class="produto-modal">
-  <div class="produto-imagem">
-    <img src="{{ produto.urlImagem }}" href="" class="imagem-padrao" />
-  </div>
-
   <div class="produto-info">
-    <h2 mat-dialog-title style="color: #FEA015;">{{ produto.nome }}</h2>
-    <mat-dialog-content style="color: #eaeaea; font-size: small;">{{ produto.descricao }}</mat-dialog-content>
-  </div>
+    <div class="produto-imagem">
+      <img src="{{ produto.urlImagem }}" href="" class="imagem-padrao" />
+    </div>
 
-    <button
-      (click)="addToCart()"
-      mat-button
-      mat-dialog-close
-      class="button-modal"
-      style="color: #FEA015;">
-      Adicionar produto
-    </button>
+    <div class="descricao">
+      <div class="dropdown">
+        <mat-form-field class="select-sabor">
+          <mat-label>Escolha o sabor</mat-label>
+          <mat-select [(ngModel)]="selectedValue" name="food">
+            @for (food of foods; track food) {
+            <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+        <p>{{ selectedValue }}</p>
+      </div>
+
+      <button
+        (click)="addToCart()"
+        mat-button
+        mat-dialog-close
+        class="button-modal"
+      >
+        Adicionar produto
+      </button>
+
+<!--       <div *ngFor="let item of produto" class="added-items">
+        <button (click)="decreaseQuantity(item)">-</button>
+        <span>{{ item.quantidade || 1 }}</span>
+        <button (click)="increaseQuantity(item)">+</button>
+      </div> -->
+
+    </div>
+  </div>
 </div>

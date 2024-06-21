@@ -8,12 +8,12 @@
     </div>
 
     <div class="card">
-      <h4>[gráfico]</h4>
+      <h4>Produtos mais pedidos</h4>
       <img src="./assets/grafico.png" class="card-img-ex" alt="..." />
     </div>
   </div>
 
-  <div class="atalhos">
+  <div class="atalhos container">
     <div class="card-atalho" style="width: 12rem">
       <a routerLink="/pedido">
         <img src="./assets/pedido.png" class="card-img-top" alt="..." />
@@ -51,7 +51,9 @@
   </div>
   <hr />
 
-  <app-tabelas></app-tabelas>
+  <div class="container">
+    <app-tabelas></app-tabelas>
+  </div>
 </div>
 
 <router-outlet> </router-outlet>

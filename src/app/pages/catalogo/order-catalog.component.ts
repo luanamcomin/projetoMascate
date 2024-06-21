@@ -61,4 +61,5 @@ export class OrderCatalogComponent {
   openDialog(item: Produtos) {
     this.dialog.open(ModalProdutoComponent, { data: { item: item } });
   }
+  
 }

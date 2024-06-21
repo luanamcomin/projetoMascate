@@ -1,13 +1,17 @@
 <mat-card class="product-card">
+
   <mat-card-header>
     <mat-card-title class="nome-produto">{{ product.nome }}</mat-card-title>
   </mat-card-header>
+
   <div class="product-content">
     <div class="card-img">
       <img src="{{ product.urlImagem }}" alt="..." />
     </div>
-    <mat-card-content class="card-body">
-      <p>{{ product.descricao }}</p>
-    </mat-card-content>
+    <div class="descricao">
+      <mat-card-content class="card-body">
+        <p>{{ product.descricao }}</p>
+      </mat-card-content>
+    </div>
   </div>
 </mat-card>

@@ -1,0 +1,10 @@
+.card-top {
+  background-color: transparent;
+  width: 100%;
+  border: 1px solid #0e182b;
+  padding: 20px;
+}
+
+.container-card{
+  margin: 15px;
+}

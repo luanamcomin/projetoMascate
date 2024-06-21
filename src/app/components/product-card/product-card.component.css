@@ -9,7 +9,8 @@
 }
 
 .nome-produto {
-  color: aliceblue;
+  color: #FEA015;
+  margin-left:5px;
 }
 
 .card-body {
@@ -23,8 +24,10 @@
   width: 200px;
   height: 140px;
   background: #f4f4f4;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 10px;
+  margin-right: 0;
+  display: flex;
 }
 
 img {
@@ -36,4 +39,14 @@ img {
 
 .product-content{
   display: flex;
+}
+
+.descricao {
+  height: 140px;
+  background-color: #0E182B;
+  display: flex;
+  width: 190px;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
 }
