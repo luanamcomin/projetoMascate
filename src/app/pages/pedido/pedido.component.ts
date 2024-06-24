@@ -12,13 +12,14 @@ import { PedidoService } from '../../services/pedido/pedido.service';
 import { ModalProdutoComponent } from '../../components/modal-produto/modal-produto.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ProdutoService } from '../../services/produto/produto.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar'; // Importar MatSnackBar e MatSnackBarModule
 
 @Component({
   selector: 'app-pedido',
@@ -40,22 +41,26 @@ import { MatIconModule } from '@angular/material/icon';
     MatAutocompleteModule,
     MatButtonModule,
     MatIconModule,
+    MatSnackBarModule, // Adicionar MatSnackBarModule
   ],
   templateUrl: './pedido.component.html',
-  styleUrl: './pedido.component.css',
+  styleUrls: ['./pedido.component.css'],
 })
-export class PedidoComponent {
+
+export class PedidoComponent implements OnInit {
   searchItem: string = '';
   allProducts: Array<Produtos> = [];
   cartList: Array<Produtos> = [];
   addedItems: Array<Produtos> = [];
   dataSolicitacao: Date = new Date();
   responsavel: string = '';
+  unidade: string = 'lanchonete'; // Inicializar com um valor padrão
 
   constructor(
     public dialog: MatDialog,
     public pedidoService: PedidoService,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private snackBar: MatSnackBar // Injetar MatSnackBar
   ) {}
 
   ngOnInit() {
@@ -74,10 +79,10 @@ export class PedidoComponent {
   }
 
   addToCart() {
-    if(this.searchItem) {
-      let item: Produtos = this.allProducts.filter((product) =>
+    if (this.searchItem) {
+      let item: Produtos = this.allProducts.find((product) =>
         product.nome.toLowerCase().includes(this.searchItem.toLowerCase())
-      )[0];
+      )!;
       this.addedItems.push(item);
     }
   }
@@ -107,12 +112,27 @@ export class PedidoComponent {
   finalizarPedido() {
     const pedido = {
       responsavel: this.responsavel,
+      unidade: this.unidade,
       dataSolicitacao: this.dataSolicitacao,
-      items: this.addedItems,
+      items: this.addedItems.map((item) => ({
+        id: item.idProduto,
+        nome: item.nome,
+        quantidade: item.quantidade || 1,
+        sabor: item.sabor,
+      })),
     };
 
-    // Armazenar o pedido no serviço para ser acessado pelos componentes de histórico e gestão
-    this.pedidoService.finalizarPedido(pedido);
+    // Armazenar o pedido no serviço e obter o ID do pedido
+    const pedidoId = this.pedidoService.finalizarPedido(pedido);
+
+    // Exibir mensagem com o ID do pedido
+    this.snackBar.open(
+      `Pedido #${pedidoId} finalizado com sucesso!`,
+      'Fechar',
+      {
+        duration: 5000,
+      }
+    );
 
     // Resetar o formulário
     this.responsavel = '';

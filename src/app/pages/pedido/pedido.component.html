@@ -1,4 +1,4 @@
-<app-header> </app-header>
+<app-header></app-header>
 
 <div>
   <div class="header-pedido">
@@ -7,9 +7,9 @@
         <mat-label>Responsável pelo pedido</mat-label>
         <input matInput [(ngModel)]="responsavel" />
       </mat-form-field>
-      <p>Data de solicitação: {{ dataSolicitacao | date : "dd/MM/yyyy" }}</p>
+      <p>Data de solicitação: {{ dataSolicitacao | date: 'dd/MM/yyyy' }}</p>
 
-      <!--       Barra de pesquisa -->
+      <!-- Barra de pesquisa -->
       <form class="example-form">
         <mat-form-field class="example-full-width">
           <mat-label>Pesquisar produtos</mat-label>
@@ -55,13 +55,9 @@
 
       <div class="quantity col">
         <p>Quantidade:</p>
-        <button class="quantity-button" (click)="decreaseQuantity(item)">
-          -
-        </button>
+        <button class="quantity-button" (click)="decreaseQuantity(item)">-</button>
         <span>{{ item.quantidade || 1 }}</span>
-        <button class="quantity-button" (click)="increaseQuantity(item)">
-          +
-        </button>
+        <button class="quantity-button" (click)="increaseQuantity(item)">+</button>
       </div>
 
       <div class="observacao col">
@@ -72,18 +68,16 @@
       </div>
 
       <div class="remove-button-container col">
-        <button class="btn btn-secondary btn-sm" (click)="removeFromCart(item)">
-          Remover do carrinho
-        </button>
+        <button class="btn btn-secondary btn-sm" (click)="removeFromCart(item)">Remover do carrinho</button>
       </div>
     </div>
   </div>
 
   <hr />
   <div class="button-container">
-    <button mat-fab extended>Finalizar pedido</button>
+    <button mat-fab extended (click)="finalizarPedido()">Finalizar pedido</button>
   </div>
 </div>
 
 <app-footer></app-footer>
-<router-outlet> </router-outlet>
+<router-outlet></router-outlet>

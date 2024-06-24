@@ -1,12 +1,11 @@
 <app-header></app-header>
 
 <h3>Histórico de Pedidos</h3>
-
 <div class="container-hist">
   <div class="row mb-3">
     <div class="col-md-9">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Pesquisar..." (input)="filtrar($event)">
+        <input type="text" class="form-control" placeholder="Pesquisar..." (input)="filtrar($event)" />
         <button class="btn btn-outline-secondary" type="button" (click)="filtrar($event)">Pesquisar</button>
       </div>
     </div>
@@ -15,8 +14,8 @@
         <mat-form-field>
           <mat-label>Insira um intervalo de datas</mat-label>
           <mat-date-range-input [rangePicker]="picker">
-            <input matStartDate placeholder="Start date">
-            <input matEndDate placeholder="End date">
+            <input matStartDate placeholder="Start date" />
+            <input matEndDate placeholder="End date" />
           </mat-date-range-input>
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-date-range-picker #picker></mat-date-range-picker>
@@ -35,16 +34,24 @@
             <div class="seta-ordenacao" (click)="alternarOrdenacao()"></div>
           </div>
         </th>
+        <th scope="col">Responsável</th>
         <th scope="col">Unidade</th>
-        <th scope="col">Status</th>
+        <th scope="col">Produtos</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let pedido of filteredPedidos">
         <td scope="row">{{ pedido.id }}</td>
-        <td>{{ pedido.data | date: 'dd/MM/yyyy' }} {{ pedido.hora }}</td>
+        <td>{{ pedido.dataSolicitacao | date: 'dd/MM/yyyy' }} {{ pedido.hora }}</td>
+        <td>{{ pedido.responsavel }}</td>
         <td>{{ pedido.unidade }}</td>
-        <td>{{ pedido.status }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let item of pedido.items">
+              {{ item.nome }} ({{ item.quantidade }}): {{ item.sabor.join(', ') }}
+            </li>
+          </ul>
+        </td>
       </tr>
     </tbody>
   </table>
