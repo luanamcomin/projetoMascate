@@ -5,7 +5,7 @@
     <div class="info-pedido">
       <p>Responsável pelo pedido: [usuario]</p>
       <p>Data de solicitação: [data de hoje]</p>
-<!--       Barra de pesquisa -->
+      <!--       Barra de pesquisa -->
       <form class="example-form">
         <mat-form-field class="example-full-width">
           <mat-label>Pesquisar produtos</mat-label>
@@ -14,7 +14,7 @@
             placeholder="Produto"
             aria-label="Number"
             matInput
-            [ngModelOptions]="{standalone: true}"
+            [ngModelOptions]="{ standalone: true }"
             [(ngModel)]="searchItem"
             [matAutocomplete]="auto"
             (keyup)="search()"
@@ -37,28 +37,49 @@
     </div>
   </div>
 
-<!-- Lista de itens adicionados no carrinho -->
- <hr>
-  <div
-    *ngFor="let item of addedItems"
-    mat-button>
-    <h2>{{ item.nome }}</h2>
-    <p>{{ item.descricao }}</p>
-    <img [src]="item.urlImagem" alt="{{ item.nome }}" />
-    <button (click)="removeFromCart(item)">Remover do carrinho</button>
-    <div>
-      <button (click)="decreaseQuantity(item)">-</button>
-      <span>{{ item.quantidade || 1 }}</span>
-      <button (click)="increaseQuantity(item)">+</button>
+  <!-- Lista de itens adicionados no carrinho -->
+  <hr />
+  <div class="card" *ngFor="let item of addedItems" mat-button>
+    <div class="card-body row">
+      <img [src]="item.urlImagem" alt="{{ item.nome }}" />
+
+      <div class="col">
+        <h2>{{ item.nome }}</h2>
+        <p>{{ item.descricao }}</p>
+        <p>Sabor: {{ item.sabor }}</p>
+      </div>
+
+      <div class="quantity col">
+        <p>Quantidade:</p>
+        <button class="quantity-button" (click)="decreaseQuantity(item)">
+          -
+        </button>
+        <span>{{ item.quantidade || 1 }}</span>
+        <button class="quantity-button" (click)="increaseQuantity(item)">
+          +
+        </button>
+      </div>
+
+      <div class="observacao col">
+        <p>Observação sobre o item:</p>
+        <mat-form-field class="example-full-width">
+          <textarea matInput></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="remove-button-container col">
+        <button class="btn btn-secondary btn-sm" (click)="removeFromCart(item)">
+          Remover do carrinho
+        </button>
+      </div>
+
     </div>
   </div>
-</div>
 
-<hr>
-<div class="button-container">
-  <button mat-fab extended>
-    Finalizar pedido
-  </button>
+  <hr />
+  <div class="button-container">
+    <button mat-fab extended>Finalizar pedido</button>
+  </div>
 </div>
 
 <app-footer></app-footer>

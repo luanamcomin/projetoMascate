@@ -13,31 +13,71 @@
   height: 160px;
   padding: 10px;
   background: #d9d9d9;
-  border-radius:5px;
+  border-radius: 5px;
 }
 
-.obs-pedido{
+.obs-pedido {
   width: 35%;
   height: 160px;
   padding: 10px;
   background: #d9d9d9;
-  border-radius:5px;
+  border-radius: 5px;
 }
 
-.header-pedido{
+.header-pedido {
   margin: 20px;
   display: flex;
   gap: 15px;
-
 }
 
 .button-container {
   display: flex;
   justify-content: center;
 }
+
 .button-container button {
   border-radius: 5px;
-  background-color: #FEA015;
+  background-color: #fea015;
   color: #d9d9d9;
   font-size: large;
 }
+
+.card-body img {
+  width: 200px;
+  height: 140px;
+  background: #f4f4f4;
+  border-radius: 5px;
+  margin: 10px;
+  margin-right: 0;
+  display: flex;
+}
+
+.quantity-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  font-size: 18px;
+  background-color: #161616;
+  color: #f4f4f4;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.quantity-input {
+  width: 50px; /* Ajuste conforme necessário */
+  text-align: center;
+  font-size: 18px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+.remove-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
