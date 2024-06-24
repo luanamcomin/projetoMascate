@@ -5,11 +5,8 @@ import { Produtos } from '../../models/produtos';
   providedIn: 'root',
 })
 export class PedidoService {
-  cart: Array<Produtos> = [];
-
-/*   pedido: Array<> = []; */
-
-  constructor() {}
+  private cart: Array<Produtos> = [];
+  private pedidos: Array<any> = []; // Adicione um array para armazenar os pedidos finalizados
 
   getCart() {
     return this.cart;
@@ -19,5 +16,11 @@ export class PedidoService {
     this.cart.push(item);
   }
 
+  finalizarPedido(pedido: any) {
+    this.pedidos.push(pedido);
+  }
 
+  getPedidos() {
+    return this.pedidos;
+  }
 }

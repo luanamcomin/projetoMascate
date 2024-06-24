@@ -3,8 +3,12 @@
 <div>
   <div class="header-pedido">
     <div class="info-pedido">
-      <p>Responsável pelo pedido: [usuario]</p>
-      <p>Data de solicitação: [data de hoje]</p>
+      <mat-form-field>
+        <mat-label>Responsável pelo pedido</mat-label>
+        <input matInput [(ngModel)]="responsavel" />
+      </mat-form-field>
+      <p>Data de solicitação: {{ dataSolicitacao | date : "dd/MM/yyyy" }}</p>
+
       <!--       Barra de pesquisa -->
       <form class="example-form">
         <mat-form-field class="example-full-width">
@@ -72,7 +76,6 @@
           Remover do carrinho
         </button>
       </div>
-
     </div>
   </div>
 

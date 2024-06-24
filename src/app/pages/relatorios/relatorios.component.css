@@ -1,10 +1,39 @@
-.card-top {
-  background-color: transparent;
-  width: 100%;
-  border: 1px solid #0e182b;
+
+.container-relatorios {
+  margin: 20px auto;
+  max-width: 100%;
   padding: 20px;
 }
 
-.container-card{
-  margin: 15px;
+
+hr{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 10px;
+  border-top: 5px solid #FEA015;
 }
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  margin-right: 10px;
+}
+
+.date-picker{
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.imput-date{
+  width: 400px;
+}
+
+.relatorio-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

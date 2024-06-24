@@ -49,6 +49,8 @@ export class PedidoComponent {
   allProducts: Array<Produtos> = [];
   cartList: Array<Produtos> = [];
   addedItems: Array<Produtos> = [];
+  dataSolicitacao: Date = new Date();
+  responsavel: string = '';
 
   constructor(
     public dialog: MatDialog,
@@ -100,5 +102,21 @@ export class PedidoComponent {
 
   openDialog(item: Produtos) {
     this.dialog.open(ModalProdutoComponent, { data: { item: item } });
+  }
+
+  finalizarPedido() {
+    const pedido = {
+      responsavel: this.responsavel,
+      dataSolicitacao: this.dataSolicitacao,
+      items: this.addedItems,
+    };
+
+    // Armazenar o pedido no serviço para ser acessado pelos componentes de histórico e gestão
+    this.pedidoService.finalizarPedido(pedido);
+
+    // Resetar o formulário
+    this.responsavel = '';
+    this.searchItem = '';
+    this.addedItems = [];
   }
 }

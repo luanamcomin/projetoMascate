@@ -27,24 +27,6 @@
         </div>
       </div>
     </div>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header class="barra-expansion">
-        <mat-panel-title class="titulo-dropdown">
-          Carrinho TESTE
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-
-      <div class="doces">
-        <div
-          *ngFor="let item of pedidoService.getCart()"
-          mat-button
-          (click)="openDialog(item)"
-        >
-          <app-product-card [product]="item"></app-product-card>
-        </div>
-      </div>
-    </mat-expansion-panel>
   </div>
 
   <app-footer></app-footer>

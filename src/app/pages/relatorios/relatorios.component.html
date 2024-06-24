@@ -1,34 +1,62 @@
 <app-header> </app-header>
+  <div class="container-relatorios d-grid gap-2 col-6 mx-auto">
+    <h1>Relatórios</h1>
 
-<h3>Relatórios</h3>
-
-<div class="container-card">
-  <div class="card-top">
-    <div>
-      Unidade:
-      <button>dropdown unidade</button>
+    <div class="relatorio-button">
+      <button
+        class="btn btn-primary"
+        mat-button
+        (click)="gerarRelatorio('produtos')"
+      >
+        Produtos Mais Solicitados
+      </button>
+      <button
+        class="btn btn-primary"
+        mat-button
+        (click)="gerarRelatorio('unidade')"
+      >
+        Pedidos por Unidade
+      </button>
+      <button
+        class="btn btn-primary"
+        mat-button
+        (click)="gerarRelatorio('diario')"
+      >
+        Vendas Diárias
+      </button>
+      <button
+        class="btn btn-primary"
+        mat-button
+        (click)="gerarRelatorio('mensal')"
+      >
+        Vendas Mensais
+      </button>
     </div>
 
-    <div>
-      Período:
-      <button>datepick</button>
+    <hr />
+
+    <div class="date-picker">
+      <mat-form-field class="imput-date">
+        <mat-label>Insira um intervalo de datas</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate placeholder="Start date" />
+          <input matEndDate placeholder="End date" />
+        </mat-date-range-input>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
     </div>
 
-    <button>
-      Filtrar
-    </button>
+    <div *ngIf="relatorio">
+      <h2>{{ tituloRelatorio }}</h2>
+      <table mat-table [dataSource]="relatorio" class="mat-elevation-z8">
+        <!-- Colunas do relatório aqui -->
+      </table>
+    </div>
   </div>
-</div>
 
-<div>
-  <table>
-  </table>
-</div>
-
-<!--quantidades
-    produção
-    quais produtos sairam mais
-    por mes / semana / dia-->
-
-<app-footer></app-footer>
-<router-outlet> </router-outlet>
+  <app-footer></app-footer>
+  <router-outlet> </router-outlet>
