@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Produtos } from '../../models/produtos';
+import { Produtos, Sabores } from '../../models/produtos';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,7 @@ export class ProdutoService {
       tipo: 'salgado',
       descricao: 'qualquer coisa',
       urlImagem: '../assets/coxinha.png',
-      sabor: "tradicional"
+      sabor: ['frango', 'carne de sol', 'fit'],
     },
     {
       idProduto: 1,
@@ -20,7 +20,7 @@ export class ProdutoService {
       tipo: 'doce',
       descricao: 'qualquer coisa',
       urlImagem: '../assets/boloPote.png',
-      sabor: "tradicional"
+      sabor: ['chocolate', 'chocolate branco', 'prestigio', 'morango'],
     },
     {
       idProduto: 2,
@@ -28,7 +28,7 @@ export class ProdutoService {
       tipo: 'salgado',
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/paoPizzza.png',
-      sabor: "tradicional"
+      sabor: ['misto', 'integral'],
     },
     {
       idProduto: 2,
@@ -36,7 +36,7 @@ export class ProdutoService {
       tipo: 'doce',
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/brigadeiro.png',
-      sabor: "tradicional"
+      sabor: ['tradicional'],
     },
     {
       idProduto: 2,
@@ -44,7 +44,7 @@ export class ProdutoService {
       tipo: 'salgado',
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/croassant.png',
-      sabor: "tradicional"
+      sabor: ['frango', 'misto', 'queijo'],
     },
     {
       idProduto: 2,
@@ -52,7 +52,7 @@ export class ProdutoService {
       tipo: 'salgado',
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/empada.png',
-      sabor: "tradicional"
+      sabor: ['frango', 'camarão'],
     },
     {
       idProduto: 2,
@@ -60,7 +60,7 @@ export class ProdutoService {
       tipo: 'salgado',
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/folheado.png',
-      sabor: "tradicional"
+      sabor: ['frango', 'carne de sol', 'camarão'],
     },
     {
       idProduto: 2,
@@ -68,7 +68,7 @@ export class ProdutoService {
       tipo: 'doce',
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/mousse.png',
-      sabor: "tradicional"
+      sabor: ['limão', 'maracujá'],
     },
     {
       idProduto: 2,
@@ -76,7 +76,7 @@ export class ProdutoService {
       tipo: 'doce',
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/pudim.png',
-      sabor: "tradicional"
+      sabor: ['tradicional'],
     },
     {
       idProduto: 2,
@@ -84,7 +84,7 @@ export class ProdutoService {
       tipo: 'salgado',
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/quiche.png',
-      sabor: "tradicional"
+      sabor: ['especial', 'camarão', 'lorraine'],
     },
     {
       idProduto: 2,
@@ -92,7 +92,18 @@ export class ProdutoService {
       tipo: 'doce',
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/torta.png',
-      sabor: "tradicional"
+      sabor: [
+        'alemã',
+        'banana',
+        'limão',
+        'morango',
+        'ricota',
+        'palha italiana',
+        'ameixa',
+        'crocante',
+        'brigadeiro',
+        'prestigio',
+      ],
     },
     {
       idProduto: 2,
@@ -100,7 +111,7 @@ export class ProdutoService {
       tipo: 'doce',
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/tratalete.png',
-      sabor: "tradicional"
+      sabor: ['leite condensado', 'chocolate', 'doce de leite', 'morango'],
     },
   ];
 

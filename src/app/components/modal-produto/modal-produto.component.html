@@ -8,9 +8,9 @@
       <div class="dropdown">
         <mat-form-field class="select-sabor">
           <mat-label>Escolha o sabor</mat-label>
-          <mat-select [(ngModel)]="selectedValue" name="food">
-            @for (food of foods; track food) {
-            <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
+          <mat-select [(ngModel)]="selectedValue" name="sabor">
+            @for (sabor of produto.sabor; track sabor) {
+            <mat-option [value]="sabor">{{ sabor }}</mat-option>
             }
           </mat-select>
         </mat-form-field>
@@ -25,12 +25,6 @@
       >
         Adicionar produto
       </button>
-
-<!--       <div *ngFor="let item of produto" class="added-items">
-        <button (click)="decreaseQuantity(item)">-</button>
-        <span>{{ item.quantidade || 1 }}</span>
-        <button (click)="increaseQuantity(item)">+</button>
-      </div> -->
 
     </div>
   </div>

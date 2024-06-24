@@ -1,9 +1,9 @@
 export interface Pedidos {
   idPedido: number;
-  idFuncionario: number,
+  idFuncionario: number;
   idUnidade: number;
   observacao: string;
   data?: Date;
   status: string;
-  idProduto: number;
+  idProduto: number; //provavelmente aqui será uma array dos produtos do carrinho
 }

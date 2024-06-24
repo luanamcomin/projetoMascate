@@ -7,6 +7,8 @@ import { Produtos } from '../../models/produtos';
 export class PedidoService {
   cart: Array<Produtos> = [];
 
+/*   pedido: Array<> = []; */
+
   constructor() {}
 
   getCart() {
@@ -17,5 +19,5 @@ export class PedidoService {
     this.cart.push(item);
   }
 
-  
+
 }
