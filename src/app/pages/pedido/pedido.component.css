@@ -81,3 +81,7 @@
   margin-top: auto;
 }
 
+.resp-unid{
+  display: flex;
+  gap: 10px;
+}

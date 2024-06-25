@@ -3,6 +3,8 @@
 <div>
   <div class="header-pedido">
     <div class="info-pedido">
+      
+      <div class="resp-unid">
       <mat-form-field>
         <mat-label>Responsável pelo pedido</mat-label>
         <input matInput [(ngModel)]="responsavel" name="responsavel" />
@@ -15,11 +17,12 @@
           <mat-option value="cafeteria">Cafeteria</mat-option>
         </mat-select>
       </mat-form-field>
+    </div>
 
       <p>Data de solicitação: {{ dataSolicitacao | date: 'dd/MM/yyyy' }}</p>
 
       <!-- Barra de pesquisa -->
-      <form class="example-form">
+      <!-- <form class="example-form">
         <mat-form-field class="example-full-width">
           <mat-label>Pesquisar produtos</mat-label>
           <input
@@ -40,7 +43,7 @@
           </mat-autocomplete>
         </mat-form-field>
       </form>
-      <button (click)="addToCart()">Adicionar</button>
+      <button (click)="addToCart()">Adicionar</button> -->
     </div>
 
     <div class="obs-pedido">
