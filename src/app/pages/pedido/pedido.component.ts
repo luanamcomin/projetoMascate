@@ -20,6 +20,7 @@ import { ProdutoService } from '../../services/produto/produto.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar'; // Importar MatSnackBar e MatSnackBarModule
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-pedido',
@@ -42,6 +43,7 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar'; //
     MatButtonModule,
     MatIconModule,
     MatSnackBarModule,
+    MatSelectModule 
   ],
   templateUrl: './pedido.component.html',
   styleUrls: ['./pedido.component.css'],
@@ -55,7 +57,7 @@ export class PedidoComponent implements OnInit {
   dataSolicitacao: Date = new Date();
   responsavel: string = '';
   unidade: string = 'lanchonete'; // Inicializar com um valor padrão
-  observacaoGeral: string = ''; // Adicionar observacaoGeral
+  observacaoGeral: string = '';
 
   constructor(
     public dialog: MatDialog,
