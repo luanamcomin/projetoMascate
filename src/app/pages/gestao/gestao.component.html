@@ -15,18 +15,12 @@
   </table>
 
   <mat-accordion>
-    <mat-expansion-panel
-      (opened)="panelOpenState.set(true)"
-      (closed)="panelOpenState.set(false)"
-    >
+    <mat-expansion-panel *ngFor="let pedido of pedidos" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
       <mat-expansion-panel-header>
-        <mat-panel-title> Pedido: [id do pedido] </mat-panel-title>
-
-        <mat-panel-description> Para: [unidade] </mat-panel-description>
-
-        <mat-panel-description>
-          Solicitado as: [horario de solicitação]
-        </mat-panel-description>
+        <mat-panel-title> Pedido: {{ pedido.id }} </mat-panel-title>
+        <mat-panel-description> Para: {{ pedido.unidade }} </mat-panel-description>
+        <mat-panel-description> Solicitado as: {{ pedido.dataSolicitacao | date: 'dd/MM/yyyy HH:mm' }} </mat-panel-description>
+        <mat-panel-description> Status: {{ pedido.status }} </mat-panel-description>
       </mat-expansion-panel-header>
 
       <table class="table">
@@ -36,35 +30,24 @@
             <td scope="col"><strong>Variação</strong></td>
             <td scope="col"><strong>Quantidade Solicitada</strong></td>
             <td scope="col"><strong>Obs</strong></td>
-            <td scope="col"><strong>Status</strong></td>
-            <td scope="col"></td>
           </tr>
         </thead>
 
         <tbody>
-          <tr>
-            <td>Produto:<!-- {{ item.nome }} --></td>
-            <td>
-              Sabor:
-              <!-- {{ item.sabor }} -->
-            </td>
-            <td>
-              Quantidade:
-              <!-- {{item.quantidade}} -->
-            </td>
-            <td>
-              <mat-label>
-                <input />
-              </mat-label>
-            </td>
-            <td class="button-status">
-              <button type="button" class="btn btn-secondary">Em preparação</button>
-              <button type="button" class="btn btn-success">Finalizado</button>
-              <button type="button" class="btn btn-danger">Cancelado</button>
-            </td>
+          <tr *ngFor="let item of pedido.items">
+            <td>Produto: {{ item.nome }}</td>
+            <td>Sabor: {{ item.sabor }}</td>
+            <td>Quantidade: {{ item.quantidade }}</td>
+            <td>{{ item.observacao }}</td>
           </tr>
         </tbody>
       </table>
+
+      <div class="button-status">
+        <button type="button" class="btn btn-secondary" (click)="atualizarStatus(pedido.id, 'em preparacao')">Em preparação</button>
+        <button type="button" class="btn btn-success" (click)="atualizarStatus(pedido.id, 'finalizado')">Finalizado</button>
+        <button type="button" class="btn-outline-danger" (click)="atualizarStatus(pedido.id, 'cancelado')">Cancelado</button>
+      </div>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

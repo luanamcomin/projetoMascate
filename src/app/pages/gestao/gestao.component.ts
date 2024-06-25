@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { GestaoService } from '../../services/gestao/gestao.service';
 import { PedidoService } from '../../services/pedido/pedido.service';
 import { CommonModule } from '@angular/common';
 
@@ -23,19 +22,22 @@ import { CommonModule } from '@angular/common';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './gestao.component.html',
-  styleUrl: './gestao.component.css',
+  styleUrls: ['./gestao.component.css'],
 })
-export class GestaoComponent {
+
+export class GestaoComponent implements OnInit {
   readonly panelOpenState = signal(false);
+  pedidos: Array<any> = [];
 
   constructor(
-    private gestaoService: GestaoService,
-    public pedidoService: PedidoService
+    private pedidoService: PedidoService
   ) {}
 
-  finalizarPedido(numeroPedido: number) {
-    // Lógica para finalizar o pedido com o número recebido
-    console.log(`Pedido ${numeroPedido} finalizado.`);
-    // Aqui você pode implementar lógica adicional, como chamar serviços, atualizar estados, etc.
+  ngOnInit() {
+    this.pedidos = this.pedidoService.getPedidos();
+  }
+
+  atualizarStatus(pedidoId: number, status: string) {
+    this.pedidoService.updatePedidoStatus(pedidoId, status);
   }
 }

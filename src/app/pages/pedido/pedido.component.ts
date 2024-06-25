@@ -118,6 +118,7 @@ export class PedidoComponent implements OnInit {
       unidade: this.unidade,
       dataSolicitacao: this.dataSolicitacao,
       observacaoGeral: this.observacaoGeral,
+      status: 'em analise', // Definir o status inicial do pedido
       items: this.addedItems.map((item) => ({
         id: item.idProduto,
         nome: item.nome,

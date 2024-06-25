@@ -26,6 +26,13 @@ export class PedidoService {
     return this.pedidos;
   }
 
+  updatePedidoStatus(pedidoId: number, status: string) {
+    const pedido = this.pedidos.find((p) => p.id === pedidoId);
+    if (pedido) {
+      pedido.status = status;
+    }
+  }
+
   private generatePedidoId(): number {
     return this.pedidos.length > 0
       ? this.pedidos[this.pedidos.length - 1].id + 1
