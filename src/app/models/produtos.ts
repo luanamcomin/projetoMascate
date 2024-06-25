@@ -35,4 +35,5 @@ export interface Produtos {
   urlImagem: string;
   sabor: Array<Sabores>;
   quantidade?: number;
+  observacao: string;
 }

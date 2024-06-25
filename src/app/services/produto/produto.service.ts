@@ -13,6 +13,7 @@ export class ProdutoService {
       descricao: 'qualquer coisa',
       urlImagem: '../assets/coxinha.png',
       sabor: ['frango', 'carne de sol', 'fit'],
+      observacao: "",
     },
     {
       idProduto: 1,
@@ -21,6 +22,7 @@ export class ProdutoService {
       descricao: 'qualquer coisa',
       urlImagem: '../assets/boloPote.png',
       sabor: ['chocolate', 'chocolate branco', 'prestigio', 'morango'],
+      observacao: "",
     },
     {
       idProduto: 2,
@@ -29,6 +31,7 @@ export class ProdutoService {
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/paoPizzza.png',
       sabor: ['misto', 'integral'],
+      observacao: "",
     },
     {
       idProduto: 2,
@@ -37,6 +40,7 @@ export class ProdutoService {
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/brigadeiro.png',
       sabor: ['tradicional'],
+      observacao: "",
     },
     {
       idProduto: 2,
@@ -45,6 +49,7 @@ export class ProdutoService {
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/croassant.png',
       sabor: ['frango', 'misto', 'queijo'],
+      observacao: "",
     },
     {
       idProduto: 2,
@@ -53,6 +58,7 @@ export class ProdutoService {
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/empada.png',
       sabor: ['frango', 'camarão'],
+      observacao: "",
     },
     {
       idProduto: 2,
@@ -61,6 +67,7 @@ export class ProdutoService {
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/folheado.png',
       sabor: ['frango', 'carne de sol', 'camarão'],
+      observacao: "",
     },
     {
       idProduto: 2,
@@ -69,6 +76,7 @@ export class ProdutoService {
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/mousse.png',
       sabor: ['limão', 'maracujá'],
+      observacao: "",
     },
     {
       idProduto: 2,
@@ -77,6 +85,7 @@ export class ProdutoService {
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/pudim.png',
       sabor: ['tradicional'],
+      observacao: "",
     },
     {
       idProduto: 2,
@@ -85,6 +94,7 @@ export class ProdutoService {
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/quiche.png',
       sabor: ['especial', 'camarão', 'lorraine'],
+      observacao: "",
     },
     {
       idProduto: 2,
@@ -104,6 +114,7 @@ export class ProdutoService {
         'brigadeiro',
         'prestigio',
       ],
+      observacao: "",
     },
     {
       idProduto: 2,
@@ -112,6 +123,7 @@ export class ProdutoService {
       descricao: 'qualquer outra coisa',
       urlImagem: '../assets/tratalete.png',
       sabor: ['leite condensado', 'chocolate', 'doce de leite', 'morango'],
+      observacao: "",
     },
   ];
 

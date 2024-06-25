@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { PedidoService } from '../../services/pedido/pedido.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -32,6 +32,7 @@ import { provideNativeDateAdapter } from '@angular/material/core';
   templateUrl: './historico.component.html',
   styleUrls: ['./historico.component.css'],
 })
+
 export class HistoricoComponent implements OnInit {
   pedidos: Array<any> = [];
   filtro: string | null = null;
@@ -79,4 +80,3 @@ export class HistoricoComponent implements OnInit {
     return pedidosFiltrados;
   }
 }
-  

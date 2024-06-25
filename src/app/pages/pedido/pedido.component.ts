@@ -13,7 +13,7 @@ import { ModalProdutoComponent } from '../../components/modal-produto/modal-prod
 import { MatDialog } from '@angular/material/dialog';
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
 import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ProdutoService } from '../../services/produto/produto.service';
@@ -41,7 +41,7 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar'; //
     MatAutocompleteModule,
     MatButtonModule,
     MatIconModule,
-    MatSnackBarModule, // Adicionar MatSnackBarModule
+    MatSnackBarModule,
   ],
   templateUrl: './pedido.component.html',
   styleUrls: ['./pedido.component.css'],
@@ -55,12 +55,13 @@ export class PedidoComponent implements OnInit {
   dataSolicitacao: Date = new Date();
   responsavel: string = '';
   unidade: string = 'lanchonete'; // Inicializar com um valor padrão
+  observacaoGeral: string = ''; // Adicionar observacaoGeral
 
   constructor(
     public dialog: MatDialog,
     public pedidoService: PedidoService,
     private produtoService: ProdutoService,
-    private snackBar: MatSnackBar // Injetar MatSnackBar
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit() {
@@ -114,18 +115,18 @@ export class PedidoComponent implements OnInit {
       responsavel: this.responsavel,
       unidade: this.unidade,
       dataSolicitacao: this.dataSolicitacao,
+      observacaoGeral: this.observacaoGeral,
       items: this.addedItems.map((item) => ({
         id: item.idProduto,
         nome: item.nome,
         quantidade: item.quantidade || 1,
         sabor: item.sabor,
+        observacao: item.observacao,
       })),
     };
 
-    // Armazenar o pedido no serviço e obter o ID do pedido
     const pedidoId = this.pedidoService.finalizarPedido(pedido);
 
-    // Exibir mensagem com o ID do pedido
     this.snackBar.open(
       `Pedido #${pedidoId} finalizado com sucesso!`,
       'Fechar',
@@ -134,8 +135,9 @@ export class PedidoComponent implements OnInit {
       }
     );
 
-    // Resetar o formulário
     this.responsavel = '';
+    this.unidade = 'lanchonete';
+    this.observacaoGeral = '';
     this.searchItem = '';
     this.addedItems = [];
   }

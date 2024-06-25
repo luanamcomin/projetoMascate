@@ -5,8 +5,17 @@
     <div class="info-pedido">
       <mat-form-field>
         <mat-label>Responsável pelo pedido</mat-label>
-        <input matInput [(ngModel)]="responsavel" />
+        <input matInput [(ngModel)]="responsavel" name="responsavel" />
       </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Unidade</mat-label>
+        <mat-select [(ngModel)]="unidade" name="unidade">
+          <mat-option value="lanchonete">Lanchonete</mat-option>
+          <mat-option value="cafeteria">Cafeteria</mat-option>
+        </mat-select>
+      </mat-form-field>
+
       <p>Data de solicitação: {{ dataSolicitacao | date: 'dd/MM/yyyy' }}</p>
 
       <!-- Barra de pesquisa -->
@@ -20,6 +29,7 @@
             matInput
             [ngModelOptions]="{ standalone: true }"
             [(ngModel)]="searchItem"
+            name="searchItem"
             [matAutocomplete]="auto"
             (keyup)="search()"
           />
@@ -36,7 +46,7 @@
     <div class="obs-pedido">
       <p>Observações gerais sobre o pedido:</p>
       <mat-form-field class="example-full-width">
-        <textarea matInput></textarea>
+        <textarea matInput [(ngModel)]="observacaoGeral" name="observacaoGeral"></textarea>
       </mat-form-field>
     </div>
   </div>
@@ -63,7 +73,7 @@
       <div class="observacao col">
         <p>Observação sobre o item:</p>
         <mat-form-field class="example-full-width">
-          <textarea matInput></textarea>
+          <textarea matInput [(ngModel)]="item.observacao" name="itemObservacao"></textarea>
         </mat-form-field>
       </div>
 

@@ -48,7 +48,7 @@
         <td>
           <ul>
             <li *ngFor="let item of pedido.items">
-              {{ item.nome }} ({{ item.quantidade }}): {{ item.sabor.join(', ') }}
+              {{ item.nome }} ({{ item.quantidade }}): {{ item.sabor.join(', ') }} - Observação: {{ item.observacao }}
             </li>
           </ul>
         </td>
