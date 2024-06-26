@@ -44,21 +44,21 @@ export class ModalProdutoComponent {
     public pedidoService: PedidoService
   ) {
     this.produto = this.data.item;
+    this.produto.quantidade = this.produto.quantidade || 1; // Inicializar a quantidade
   }
 
   addToCart() {
-    this.pedidoService.setCart(this.produto);
     this.produto.sabor = [this.selectedValue];
+    this.pedidoService.setCart(this.produto);
   }
 
-  increaseQuantity(item: Produtos) {
-    item.quantidade = (item.quantidade || 0) + 1;
-    console.log(this.produto);
+  increaseQuantity() {
+    this.produto.quantidade = (this.produto.quantidade || 0) + 1;
   }
 
-  decreaseQuantity(item: Produtos) {
-    if (item.quantidade && item.quantidade > 0) {
-      item.quantidade -= 1;
+  decreaseQuantity() {
+    if (this.produto.quantidade && this.produto.quantidade > 0) {
+      this.produto.quantidade -= 1;
     }
   }
 }

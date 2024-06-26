@@ -43,7 +43,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatButtonModule,
     MatIconModule,
     MatSnackBarModule,
-    MatSelectModule 
+    MatSelectModule
   ],
   templateUrl: './pedido.component.html',
   styleUrls: ['./pedido.component.css'],
@@ -56,7 +56,7 @@ export class PedidoComponent implements OnInit {
   addedItems: Array<Produtos> = [];
   dataSolicitacao: Date = new Date();
   responsavel: string = '';
-  unidade: string = 'lanchonete'; // Inicializar com um valor padrão
+  unidade: string = 'lanchonete';
   observacaoGeral: string = '';
 
   constructor(
@@ -99,7 +99,6 @@ export class PedidoComponent implements OnInit {
 
   increaseQuantity(item: Produtos) {
     item.quantidade = (item.quantidade || 0) + 1;
-    console.log(this.addedItems);
   }
 
   decreaseQuantity(item: Produtos) {
@@ -109,7 +108,13 @@ export class PedidoComponent implements OnInit {
   }
 
   openDialog(item: Produtos) {
-    this.dialog.open(ModalProdutoComponent, { data: { item: item } });
+    const dialogRef = this.dialog.open(ModalProdutoComponent, { data: { item: item } });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.addedItems.push(result);
+      }
+    });
   }
 
   finalizarPedido() {
@@ -118,7 +123,7 @@ export class PedidoComponent implements OnInit {
       unidade: this.unidade,
       dataSolicitacao: this.dataSolicitacao,
       observacaoGeral: this.observacaoGeral,
-      status: 'em analise', // Definir o status inicial do pedido
+      status: 'em analise',
       items: this.addedItems.map((item) => ({
         id: item.idProduto,
         nome: item.nome,

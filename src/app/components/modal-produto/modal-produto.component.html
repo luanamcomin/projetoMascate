@@ -17,6 +17,11 @@
         <p>{{ selectedValue }}</p>
       </div>
 
+      <mat-form-field>
+        <mat-label>Quantidade</mat-label>
+        <input matInput type="number" [(ngModel)]="produto.quantidade" name="quantidade" />
+      </mat-form-field>
+
       <button
         (click)="addToCart()"
         mat-button
@@ -25,7 +30,6 @@
       >
         Adicionar produto
       </button>
-
     </div>
   </div>
 </div>

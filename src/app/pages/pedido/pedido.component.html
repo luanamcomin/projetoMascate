@@ -3,7 +3,7 @@
 <div>
   <div class="header-pedido">
     <div class="info-pedido">
-      
+
       <div class="resp-unid">
       <mat-form-field>
         <mat-label>Responsável pelo pedido</mat-label>
@@ -68,9 +68,9 @@
 
       <div class="quantity col">
         <p>Quantidade:</p>
-        <button class="quantity-button" (click)="decreaseQuantity(item)">-</button>
-        <span>{{ item.quantidade || 1 }}</span>
-        <button class="quantity-button" (click)="increaseQuantity(item)">+</button>
+        <mat-form-field>
+          <input matInput type="number" [(ngModel)]="item.quantidade" name="quantidade" />
+        </mat-form-field>
       </div>
 
       <div class="observacao col">
