@@ -35,6 +35,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 export class RelatoriosComponent {
   relatorio: any;
   tituloRelatorio!: string;
+  displayedColumns: string[] = [];
 
   constructor(private relatorioService: RelatorioService) {}
 
@@ -43,18 +44,22 @@ export class RelatoriosComponent {
       case 'produtos':
         this.relatorio = this.relatorioService.getProdutosMaisSolicitados();
         this.tituloRelatorio = 'Produtos Mais Solicitados';
+        this.displayedColumns = ['nome', 'quantidade'];
         break;
       case 'unidade':
         this.relatorio = this.relatorioService.getPedidosPorUnidade();
         this.tituloRelatorio = 'Pedidos por Unidade';
+        this.displayedColumns = ['unidade', 'pedidos', 'datas'];
         break;
       case 'diario':
         this.relatorio = this.relatorioService.getVendasDiarias();
         this.tituloRelatorio = 'Vendas Diárias';
+        this.displayedColumns = ['data', 'vendas'];
         break;
       case 'mensal':
         this.relatorio = this.relatorioService.getVendasMensais();
         this.tituloRelatorio = 'Vendas Mensais';
+        this.displayedColumns = ['mes', 'vendas'];
         break;
     }
   }
