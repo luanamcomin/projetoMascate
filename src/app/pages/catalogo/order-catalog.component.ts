@@ -41,6 +41,7 @@ import { PedidoService } from '../../services/pedido/pedido.service';
   templateUrl: './order-catalog.component.html',
   styleUrl: './order-catalog.component.css',
 })
+
 export class OrderCatalogComponent {
   productList: Array<Produtos> = [];
   cartList: Array<Produtos> = [];
@@ -61,5 +62,4 @@ export class OrderCatalogComponent {
   openDialog(item: Produtos) {
     this.dialog.open(ModalProdutoComponent, { data: { item: item } });
   }
-  
 }

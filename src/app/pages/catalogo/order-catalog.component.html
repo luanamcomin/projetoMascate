@@ -1,34 +1,28 @@
-<app-header> </app-header>
+<app-header></app-header>
 
-<div class="background" >
+<div class="background">
   <div class="container-products">
     <h3 class="titulo-produtos">Salgados</h3>
   </div>
   <div class="produtos">
-    <div *ngFor="let item of productList" mat-button (click)="openDialog(item)">
-      <div *ngIf="item.tipo === 'salgado'">
+    <ng-container *ngFor="let item of productList">
+      <div *ngIf="item.tipo === 'salgado'" mat-button (click)="openDialog(item)">
         <app-product-card [product]="item"></app-product-card>
       </div>
-    </div>
+    </ng-container>
   </div>
 
-  <div>
-    <div class="container-products">
-      <h3 class="titulo-produtos">Doces</h3>
-    </div>
-    <div class="produtos">
-      <div
-        *ngFor="let item of productList"
-        mat-button
-        (click)="openDialog(item)"
-      >
-        <div *ngIf="item.tipo === 'doce'">
-          <app-product-card [product]="item"></app-product-card>
-        </div>
+  <div class="container-products">
+    <h3 class="titulo-produtos">Doces</h3>
+  </div>
+  <div class="produtos">
+    <ng-container *ngFor="let item of productList">
+      <div *ngIf="item.tipo === 'doce'" mat-button (click)="openDialog(item)">
+        <app-product-card [product]="item"></app-product-card>
       </div>
-    </div>
+    </ng-container>
   </div>
 
   <app-footer></app-footer>
-  <router-outlet> </router-outlet>
+  <router-outlet></router-outlet>
 </div>
