@@ -1,65 +1,70 @@
 <app-header></app-header>
 
-<h3>Produção</h3>
+<div class="background">
 
-<div class="container-gestao">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Número do Pedido</th>
-        <th scope="col">Unidade</th>
-        <th scope="col">Status</th>
-        <th scope="col">Hora da Solicitação</th>
-      </tr>
-    </thead>
-  </table>
+  <h3>Produção</h3>
 
-  <mat-accordion>
-    <mat-expansion-panel *ngFor="let pedido of pedidos" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
-      <mat-expansion-panel-header>
-        <mat-panel-title> Pedido: {{ pedido.id }} </mat-panel-title>
-        <mat-panel-description> Para: {{ pedido.unidade }} </mat-panel-description>
-        <mat-panel-description> Solicitado as: {{ pedido.dataSolicitacao | date: 'dd/MM/yyyy HH:mm' }} </mat-panel-description>
-        <mat-panel-description> Status: {{ pedido.status }} </mat-panel-description>
-      </mat-expansion-panel-header>
+  <div class="container-gestao">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Número do Pedido</th>
+          <th scope="col">Unidade</th>
+          <th scope="col">Status</th>
+          <th scope="col">Hora da Solicitação</th>
+        </tr>
+      </thead>
+    </table>
 
-      <table class="table">
-        <thead>
-          <tr>
-            <td scope="col"><strong>Itens</strong></td>
-            <td scope="col"><strong>Variação</strong></td>
-            <td scope="col"><strong>Quantidade Solicitada</strong></td>
-            <td scope="col"><strong>Obs</strong></td>
-          </tr>
-        </thead>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let pedido of pedidos" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+        <mat-expansion-panel-header>
+          <mat-panel-title> Pedido: {{ pedido.id }} </mat-panel-title>
+          <mat-panel-description> Para: {{ pedido.unidade }} </mat-panel-description>
+          <mat-panel-description> Solicitado as: {{ pedido.dataSolicitacao | date: 'dd/MM/yyyy HH:mm' }} </mat-panel-description>
+          <mat-panel-description> Status: {{ pedido.status }} </mat-panel-description>
+        </mat-expansion-panel-header>
 
-        <tbody>
-          <tr *ngFor="let item of pedido.items">
-            <td>Produto: {{ item.nome }}</td>
-            <td>Sabor: {{ item.sabor }}</td>
-            <td>Quantidade: {{ item.quantidade }}</td>
-            <td>{{ item.observacao }}</td>
-          </tr>
-        </tbody>
-      </table>
+        <table class="table">
+          <thead>
+            <tr>
+              <td scope="col"><strong>Itens</strong></td>
+              <td scope="col"><strong>Variação</strong></td>
+              <td scope="col"><strong>Quantidade Solicitada</strong></td>
+              <td scope="col"><strong>Obs</strong></td>
+            </tr>
+          </thead>
 
-      <div class="button-status">
-        <button
-          type="button"
-          [ngClass]="getButtonClass(pedido, 'em preparacao')"
-          (click)="atualizarStatus(pedido.id, 'em preparacao')"
-        >Em preparação</button>
-        <button
-          type="button"
-          [ngClass]="getButtonClass(pedido, 'finalizado')"
-          (click)="atualizarStatus(pedido.id, 'finalizado')"
-        >Finalizado</button>
-        <button
-          type="button"
-          [ngClass]="getButtonClass(pedido, 'cancelado')"
-          (click)="atualizarStatus(pedido.id, 'cancelado')"
-        >Cancelado</button>
-      </div>
-    </mat-expansion-panel>
-  </mat-accordion>
+          <tbody>
+            <tr *ngFor="let item of pedido.items">
+              <td>Produto: {{ item.nome }}</td>
+              <td>Sabor: {{ item.sabor }}</td>
+              <td>Quantidade: {{ item.quantidade }}</td>
+              <td>{{ item.observacao }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="button-status">
+          <button
+            type="button"
+            [ngClass]="getButtonClass(pedido, 'em preparacao')"
+            (click)="atualizarStatus(pedido.id, 'em preparacao')"
+          >Em preparação</button>
+          <button
+            type="button"
+            [ngClass]="getButtonClass(pedido, 'finalizado')"
+            (click)="atualizarStatus(pedido.id, 'finalizado')"
+          >Finalizado</button>
+          <button
+            type="button"
+            [ngClass]="getButtonClass(pedido, 'cancelado')"
+            (click)="atualizarStatus(pedido.id, 'cancelado')"
+          >Cancelado</button>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
 </div>
+
+<app-footer></app-footer>

@@ -1,3 +1,8 @@
+.background{
+  padding: 15px;
+  background-color: rgba(14, 24, 43, 0.85);
+}
+
 h3 {
   text-align: justify;
   color: #fff;
@@ -8,7 +13,6 @@ h3 {
   margin: 20px;
 }
 
-/* Estilo para o input de pesquisa e botão */
 .input-group {
   display: flex;
   align-items: center;
@@ -31,7 +35,6 @@ h3 {
   background-color: #0056b3;
 }
 
-/* Estilo para o seletor de datas */
 .filtro-container {
   display: flex;
   justify-content: flex-end;
@@ -53,7 +56,6 @@ mat-option {
   padding: 0.5em 1em;
 }
 
-/* Estilo para a tabela */
 .table {
   width: 100%;
   margin-bottom: 1rem;
@@ -70,8 +72,8 @@ mat-option {
 }
 
 .table th {
-  background-color: #0E182B; /* Cor de fundo do cabeçalho */
-  color: #fff; /* Cor do texto no cabeçalho */
+  background-color: #0E182B;
+  color: #fff;
   font-weight: bold;
 }
 
@@ -88,14 +90,12 @@ mat-option {
   background-color: rgba(0, 0, 0, 0.075);
 }
 
-/* Estilo para o cabeçalho do painel */
 mat-expansion-panel-header {
   background-color: #f8f9fa;
   border-bottom: 1px solid #dee2e6;
   font-weight: bold;
 }
 
-/* Estilo adicional para botões */
 button {
   padding: 0.5em 1em;
   font-size: 1em;
@@ -114,7 +114,6 @@ button.mat-button:hover {
   background-color: #0056b3;
 }
 
-/* Estilo para a seta de ordenação */
 .seta-container {
   display: inline-block;
   margin-left: 0.5em;

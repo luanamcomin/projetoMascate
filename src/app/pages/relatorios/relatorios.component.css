@@ -1,3 +1,7 @@
+.background{
+  padding: 15px;
+  background-color: rgba(14, 24, 43, 0.85);
+}
 
 .container-relatorios {
   margin: 20px auto;
@@ -37,3 +41,6 @@ button {
   align-items: center;
 }
 
+h1{
+  color: aliceblue;
+}

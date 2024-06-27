@@ -1,3 +1,8 @@
+.background{
+  padding: 15px;
+  background-color: rgba(14, 24, 43, 0.85);
+}
+  
   h3 {
     text-align: justify;
     color: #fff;

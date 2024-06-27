@@ -63,3 +63,7 @@ body {
 .link:hover {
   text-decoration: underline;
 }
+
+.form-floating{
+  margin-bottom: 15px;
+}
