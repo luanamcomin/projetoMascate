@@ -1,13 +1,8 @@
 # MascateSGP
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+---
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-
-MascateSGP é um sistema de gerenciamento de pedidos internos desenvolvido para os restaurantes da faculdade SENAC PE. O projeto foi desenvolvido como parte da cadeira de Coding 2. Este sistema permite a gestão de pedidos realizados por duas unidades, "Lanchonete" e "Cafeteria", que solicitam produtos da cozinha do restaurante chamado Mascate.
+**MascateSGP é um sistema de gerenciamento de pedidos internos desenvolvido para os restaurantes da faculdade SENAC PE. O projeto foi desenvolvido como parte da cadeira de Coding 2. Este sistema permite a gestão de pedidos realizados por duas unidades, "Lanchonete" e "Cafeteria", que solicitam produtos da cozinha do restaurante chamado Mascate.**
 
 ## Funcionalidades
 
@@ -29,6 +24,7 @@ MascateSGP é um sistema de gerenciamento de pedidos internos desenvolvido para 
 
 ## Estrutura do Projeto
 
+```
 src/
 ├── app/
 │ ├── components/
@@ -40,7 +36,7 @@ src/
 │ │ └── tabelas/
 │ ├── models/
 │ │ ├── pedidos.ts
-│ │ ├── produtos.ts
+│ │ └── produtos.ts
 │ ├── pages/
 │ │ ├── catalogo/
 │ │ ├── gestao/
@@ -58,6 +54,7 @@ src/
 ├── main.ts
 ├── styles.css
 └── index.html
+```
 
 
 ## Como Executar o Projeto
