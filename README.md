@@ -1,5 +1,7 @@
 # MascateSGP
 
+Este repositório contém apenas o frontend do projeto MascateSGP. O backend do projeto pode ser encontrado [aqui](https://github.com/AmandaAguiarF/projeto-mascate.git).
+
 ---
 
 **MascateSGP é um sistema de gerenciamento de pedidos internos desenvolvido para os restaurantes da faculdade SENAC PE. O projeto foi desenvolvido como parte da cadeira de Coding 2. Este sistema permite a gestão de pedidos realizados por duas unidades, "Lanchonete" e "Cafeteria", que solicitam produtos da cozinha do restaurante chamado Mascate.**
