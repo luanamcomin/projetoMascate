@@ -2,7 +2,6 @@ import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink } from '@angular/router';
-import { materialize } from 'rxjs';
 
 
 @Component({
