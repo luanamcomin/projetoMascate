@@ -1,7 +1,6 @@
 <app-header></app-header>
 
 <div class="background">
-
   <h3>Produção</h3>
 
   <div class="container-gestao">
@@ -17,12 +16,24 @@
     </table>
 
     <mat-accordion>
-      <mat-expansion-panel *ngFor="let pedido of pedidos" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+      <mat-expansion-panel
+        id="pedido-{{ pedido.id }}"
+        *ngFor="let pedido of pedidos"
+        (opened)="panelOpenState.set(true)"
+        (closed)="panelOpenState.set(false)"
+      >
         <mat-expansion-panel-header>
           <mat-panel-title> Pedido: {{ pedido.id }} </mat-panel-title>
-          <mat-panel-description> Para: {{ pedido.unidade }} </mat-panel-description>
-          <mat-panel-description> Solicitado as: {{ pedido.dataSolicitacao | date: 'dd/MM/yyyy HH:mm' }} </mat-panel-description>
-          <mat-panel-description> Status: {{ pedido.status }} </mat-panel-description>
+          <mat-panel-description>
+            Para: {{ pedido.unidade }}
+          </mat-panel-description>
+          <mat-panel-description>
+            Solicitado as:
+            {{ pedido.dataSolicitacao | date : "dd/MM/yyyy HH:mm" }}
+          </mat-panel-description>
+          <mat-panel-description>
+            Status: {{ pedido.status }}
+          </mat-panel-description>
         </mat-expansion-panel-header>
 
         <table class="table">
@@ -50,17 +61,36 @@
             type="button"
             [ngClass]="getButtonClass(pedido, 'em preparacao')"
             (click)="atualizarStatus(pedido.id, 'em preparacao')"
-          >Em preparação</button>
+          >
+            Em preparação
+          </button>
           <button
             type="button"
             [ngClass]="getButtonClass(pedido, 'finalizado')"
             (click)="atualizarStatus(pedido.id, 'finalizado')"
-          >Finalizado</button>
+          >
+            Finalizado
+          </button>
           <button
             type="button"
             [ngClass]="getButtonClass(pedido, 'cancelado')"
             (click)="atualizarStatus(pedido.id, 'cancelado')"
-          >Cancelado</button>
+          >
+            Cancelado
+          </button>
+        </div>
+        <div class="button-print">
+          <button
+            type="button"
+            class="btn btn-outline-secondary"
+            (click)="imprimirPedido(pedido)"
+          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer-fill" viewBox="0 0 16 16">
+            <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1"/>
+            <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
+          </svg>
+            Imprimir Pedido
+          </button>
         </div>
       </mat-expansion-panel>
     </mat-accordion>

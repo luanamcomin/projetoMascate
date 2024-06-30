@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, signal, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  signal,
+  OnInit,
+} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
@@ -25,7 +30,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './gestao.component.html',
   styleUrls: ['./gestao.component.css'],
 })
-
 export class GestaoComponent implements OnInit {
   readonly panelOpenState = signal(false);
   pedidos: Array<any> = [];
@@ -41,7 +45,9 @@ export class GestaoComponent implements OnInit {
 
   atualizarStatus(pedidoId: number, status: string) {
     this.pedidoService.updatePedidoStatus(pedidoId, status);
-    this.showSnackBar(`Status do pedido #${pedidoId} atualizado para ${status}`);
+    this.showSnackBar(
+      `Status do pedido #${pedidoId} atualizado para ${status}`
+    );
   }
 
   showSnackBar(message: string) {
@@ -53,13 +59,71 @@ export class GestaoComponent implements OnInit {
   getButtonClass(pedido: any, status: string) {
     switch (status) {
       case 'em preparacao':
-        return pedido.status === 'em preparacao' ? 'btn btn-primary' : 'btn btn-outline-primary';
+        return pedido.status === 'em preparacao'
+          ? 'btn btn-primary'
+          : 'btn btn-outline-primary';
       case 'finalizado':
-        return pedido.status === 'finalizado' ? 'btn btn-success' : 'btn btn-outline-success';
+        return pedido.status === 'finalizado'
+          ? 'btn btn-success'
+          : 'btn btn-outline-success';
       case 'cancelado':
-        return pedido.status === 'cancelado' ? 'btn btn-danger' : 'btn btn-outline-danger';
+        return pedido.status === 'cancelado'
+          ? 'btn btn-danger'
+          : 'btn btn-outline-danger';
       default:
         return 'btn btn-outline-secondary';
+    }
+  }
+
+  imprimirPedido(pedido: any) {
+    const printWindow = window.open('', '_blank', 'width=800,height=600');
+    if (printWindow) {
+      const printContent = document.getElementById(
+        `pedido-${pedido.id}`
+      )!.innerHTML;
+      printWindow.document.open();
+      printWindow.document.write(`
+        <html>
+          <head>
+            <title>Pedido #${pedido.id}</title>
+            <style>
+              /* Estilos de impressão personalizados */
+              body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+              }
+              table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+              }
+              th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+              }
+              th {
+                background-color: #f2f2f2;
+              }
+              .button-status {
+                margin-top: 20px;
+              }
+            </style>
+          </head>
+          <body>
+            ${printContent}
+            <script>
+              window.onload = function() {
+                window.print();
+                window.onafterprint = function() {
+                  window.close();
+                };
+              };
+            </script>
+          </body>
+        </html>
+      `);
+      printWindow.document.close();
     }
   }
 }

@@ -13,13 +13,13 @@ import { ModalProdutoComponent } from '../../components/modal-produto/modal-prod
 import { MatDialog } from '@angular/material/dialog';
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
 import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ProdutoService } from '../../services/produto/produto.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar'; // Importar MatSnackBar e MatSnackBarModule
+import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select';
 
 @Component({
