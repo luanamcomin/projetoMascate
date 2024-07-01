@@ -73,4 +73,62 @@ export class RelatorioService {
       }))
       .sort((a, b) => b.vendas - a.vendas);
   }
+
+  getHorariosPedidos() {
+    const pedidos = this.pedidoService.getPedidos();
+    const horariosPedidos = pedidos.reduce((acc, pedido) => {
+      const horario = new Date(pedido.dataSolicitacao).getHours();
+      acc[horario] = (acc[horario] || 0) + 1;
+      return acc;
+    }, {} as { [key: string]: number });
+
+    return Object.keys(horariosPedidos)
+      .map(horario => ({
+        horario: `${horario}:00`,
+        quantidade: horariosPedidos[horario]
+      }))
+      .sort((a, b) => b.quantidade - a.quantidade);
+  }
+
+  getDesempenhoProdutos() {
+    const pedidos = this.pedidoService.getPedidos();
+    const produtosCount = pedidos.flatMap(pedido => pedido.items)
+      .reduce((acc, item: Produtos) => {
+        acc[item.nome] = acc[item.nome] || { quantidade: 0, tempoPreparo: 0 };
+        acc[item.nome].quantidade += item.quantidade!;
+        return acc;
+      }, {} as { [key: string]: { quantidade: number, tempoPreparo: number } });
+
+    return Object.keys(produtosCount)
+      .map(nome => ({
+        nome,
+        quantidade: produtosCount[nome].quantidade,
+        tempoPreparo: produtosCount[nome].tempoPreparo
+      }))
+      .sort((a, b) => b.quantidade - a.quantidade);
+  }
+
+  getPedidosPorPeriodo(startDate: Date, endDate: Date) {
+    const pedidos = this.pedidoService.getPedidos();
+    const pedidosPeriodo = pedidos.filter(pedido => {
+      const dataPedido = new Date(pedido.dataSolicitacao);
+      return dataPedido >= startDate && dataPedido <= endDate;
+    });
+
+    const pedidosCount = pedidosPeriodo.reduce((acc, pedido) => {
+      const data = new Date(pedido.dataSolicitacao).toLocaleDateString();
+      acc[data] = (acc[data] || 0) + 1;
+      return acc;
+    }, {} as { [key: string]: number });
+
+    return Object.keys(pedidosCount)
+      .map(data => ({
+        data,
+        quantidade: pedidosCount[data],
+        unidade: pedidosPeriodo.find(pedido => new Date(pedido.dataSolicitacao).toLocaleDateString() === data)!.unidade
+      }))
+      .sort((a, b) => new Date(b.data).getTime() - new Date(a.data).getTime());
+  }
+
+  getTempoPreparo() {}
 }

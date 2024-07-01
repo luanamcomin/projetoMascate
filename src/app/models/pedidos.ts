@@ -5,5 +5,6 @@ export interface Pedidos {
   observacao: string;
   data?: Date;
   status: string;
-  idProduto: number; //provavelmente aqui será uma array dos produtos do carrinho
+  idProduto: number;
+  tempoPreparo?: number;
 }

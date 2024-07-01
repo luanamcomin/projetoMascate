@@ -1,37 +1,52 @@
 <app-header></app-header>
 <div class="background">
-  <div class="container-relatorios d-grid gap-2 col-6 mx-auto">
+  <div class="container-relatorios">
     <h1>Relatórios</h1>
+    <div class="card-relatorios">
+      <div class="card-body">
+        <button class="btn btn-primary btn-relatorio" mat-button (click)="gerarRelatorio('produtos')">
+          Produtos Mais Solicitados
+        </button>
+        <button class="btn btn-primary btn-relatorio" mat-button (click)="gerarRelatorio('unidade')">
+          Pedidos por Unidade
+        </button>
+        <button class="btn btn-primary btn-relatorio" mat-button (click)="gerarRelatorio('diario')">
+          Vendas Diárias
+        </button>
+        <button class="btn btn-primary btn-relatorio" mat-button (click)="gerarRelatorio('mensal')">
+          Vendas Mensais
+        </button>
+        <button class="btn btn-primary btn-relatorio" mat-button (click)="gerarRelatorio('horarios')">
+          Relatório de Horários de Pedidos
+        </button>
+        <button class="btn btn-primary btn-relatorio" mat-button (click)="gerarRelatorio('tempoPreparo')">
+          Relatório de Tempo de Preparo
+        </button>
+        <button class="btn btn-primary btn-relatorio" mat-button (click)="gerarRelatorio('desempenhoProdutos')">
+          Relatório de Desempenho de Produtos
+        </button>
+        <button class="btn btn-primary btn-relatorio" mat-button (click)="gerarRelatorio('pedidosPeriodo')">
+          Relatório de Pedidos por Período
+        </button>
+      </div>
+    </div>
 
-    <div class="relatorio-button">
-      <button
-        class="btn btn-primary"
-        mat-button
-        (click)="gerarRelatorio('produtos')"
-      >
-        Produtos Mais Solicitados
-      </button>
-      <button
-        class="btn btn-primary"
-        mat-button
-        (click)="gerarRelatorio('unidade')"
-      >
-        Pedidos por Unidade
-      </button>
-      <button
-        class="btn btn-primary"
-        mat-button
-        (click)="gerarRelatorio('diario')"
-      >
-        Vendas Diárias
-      </button>
-      <button
-        class="btn btn-primary"
-        mat-button
-        (click)="gerarRelatorio('mensal')"
-      >
-        Vendas Mensais
-      </button>
+    <hr />
+
+    <div class="date-picker">
+      <mat-form-field class="input-date">
+        <mat-label>Data Inicial</mat-label>
+        <input matInput [matDatepicker]="startPicker" [(ngModel)]="startDate" placeholder="Data Inicial">
+        <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+        <mat-datepicker #startPicker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="input-date">
+        <mat-label>Data Final</mat-label>
+        <input matInput [matDatepicker]="endPicker" [(ngModel)]="endDate" placeholder="Data Final">
+        <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+        <mat-datepicker #endPicker></mat-datepicker>
+      </mat-form-field>
     </div>
 
     <hr />
@@ -75,6 +90,11 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
+    </div>
+
+    <div class="export-buttons">
+      <button class="btn btn-secondary" mat-button (click)="exportToExcel()">Exportar para Excel</button>
+      <button class="btn btn-secondary" mat-button (click)="exportToPDF()">Exportar para PDF</button>
     </div>
   </div>
 </div>
